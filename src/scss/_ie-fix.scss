@@ -1,0 +1,2184 @@
+html body .app.flex-row.align-items-center {
+  height: 100vh;
+}
+.app-header, .header {
+  background-color: #bb8fc4!important;
+}
+.header .custom-nav ul{
+  list-style: none;
+  margin-bottom: 0;
+}
+.header .custom-nav {
+  text-align: right;
+}
+.header .custom-nav ul li a, .header .custom-nav ul li a button {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.header .custom-nav ul li {
+  display: inline-block;
+  padding-left: 51px;
+  vertical-align: middle;
+}
+.header .navbar-collapse {
+  justify-content: flex-end;
+}
+.navbar-nav .nav-link {
+  color: #fff!important;
+}
+.navbar-toggler-icon {
+  background-color: #fff;
+  border-radius: 2px;
+}
+.homeBannerer{
+  position: relative;
+}
+.homeBanner img {
+  width: 100%;
+}
+.homeBanner .bannerText {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  color: #000;
+  justify-content: center;
+  text-align: center;
+}
+.bannerText h1{
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: bold;
+}
+.bannerText p{
+ font-size: 16px;
+  font-weight: bold;
+  color: #ff0003;
+}
+.bannerText h6{
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  width: 65%;
+  margin: 0 auto;
+  display: block;
+}
+.bannerbtn a {
+  background-color: #20a8d8;
+  border-color: #20a8d8;
+  color: #fff;
+  padding: 12px 40px;
+  font-size: 16px;
+  border-radius: 35px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.bannerbtn a:hover, .requestbtn a:hover, .submitbtn button:hover{
+    background: #222222;
+}
+.bannerbtn {
+  padding-top: 45px;
+}
+.aboutpara p {
+  font-size: 18px;
+  line-height: 35px;
+  color: #222222;
+  padding-top: 25px;
+}
+.aboutbtn {
+  margin-top: 60px;
+}
+.aboutbtn a {
+  background: #222222;
+  color: #fff;
+  font-size: 17px;
+  padding: 12px 35px;
+  border-radius: 35px;
+  font-weight: 500;
+}
+.aboutSec {
+  padding: 65px 0;
+  background-color: #fff;
+}
+.portfolioSec{
+  background-image: url(../assets/img/brand/profoliobg.png);
+  background-size: cover;
+  padding: 60px 0 15px 0;
+  color: #fff;
+  background-repeat: no-repeat;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  background-position: center;
+}
+.portfolioHeading h4 {
+  font-family: 'Sintony', sans-serif;
+  font-size: 32px;
+  color: #222222;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.portfolioHeading p{
+line-height: 30px;
+  padding-top: 20px;
+  font-size: 18px;
+  color: #222222;
+}
+.portfolioBox img{
+margin: 0 auto;
+display: block;
+padding: 12px 0 45px 0;
+}
+.portfolioBox h4{
+  font-family: 'Sintony', sans-serif;
+  font-size: 24px;
+  color: #222222;
+  font-weight: bold;
+}
+.portfolioBox p {
+  line-height: 30px;
+  padding-top: 6px;
+  font-size: 16px;
+  color: #222222;
+  width: 75%;
+  margin: 0 auto;
+  display: block;
+}
+a:hover {
+  text-decoration: none!important;
+}
+.contactSec{
+  background-image: url(../assets/img/brand/contactusbg.png);
+  background-size: cover;
+  padding: 55px 0 77px 0;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: relative;
+  background-position: center;
+}
+.contactDetail h4 {
+  font-family: 'Sintony', sans-serif;
+  font-size: 30px;
+  color: #222222;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+.contactDetail {
+  padding-top: 45px;
+  padding-left: 55px;
+}
+.contactDetail p {
+  line-height: 30px;
+  font-size: 18px;
+  color: #222222;
+  width: 80%;
+  margin-bottom: 0;
+}
+.contactDetail h5, .contactDetail h6{
+  padding-top: 35px;
+  font-weight: bold;
+  font-size: 24px;
+  color: #222222;
+  margin-bottom: 0;
+}
+.contactDetail h6 {
+  padding-top: 55px;
+}
+.contactDetail a{
+  font-weight: bold;
+  font-size: 24px;
+  color: #ff0000;
+}
+.effect-3 {
+border: 0;
+padding:7px 7px;
+border-bottom: 1px solid #959595;
+width: 100%;
+background: transparent;
+position: relative;
+outline: none;
+}
+.contactForm h4{
+font-family: 'Sintony', sans-serif;
+font-size: 30px;
+color: #ff0000;
+font-weight: bold;
+text-transform: uppercase;
+text-align: center;
+margin-bottom: 45px;
+}
+.contactForm{
+border-radius: 64px;
+background-color: rgb(255, 255, 255);
+box-shadow: 0px 4px 49px 0px rgba(0, 0, 0, 0.21);
+padding: 41px 20px;
+}
+.contactForm .form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+.conatctBtn {
+  padding-top: 20px;
+  text-align: center;
+}
+.contactForm input::-webkit-input-placeholder { /* Edge */
+    color: #959595;
+    font-size: 15px;
+     font-family: 'Sintony', sans-serif;
+}
+.contactForm input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #959595;
+    font-size: 15px;
+     font-family: 'Sintony', sans-serif;
+}
+.contactForm input::placeholder {
+    color: #959595;
+    font-size: 15px;
+     font-family: 'Sintony', sans-serif;
+}
+.contactForm textarea::-webkit-input-placeholder { /* Edge */
+    color: #959595;
+    font-size: 15px;
+     font-family: 'Sintony', sans-serif;
+}
+.contactForm textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #959595;
+    font-size: 15px;
+     font-family: 'Sintony', sans-serif;
+}
+.contactForm textarea::placeholder {
+    color: #959595;
+    font-size: 15px;
+     font-family: 'Sintony', sans-serif;
+}
+.contactForm .intl-tel-input input {
+  color: #222222;
+  font-size: 15px;
+  font-family: 'Sintony', sans-serif;
+}
+.contactForm select {
+ color: #959595;
+ font-size: 15px;
+ font-family: 'Sintony', sans-serif;
+ appearance: none;
+ -moz-appearance: window;
+  -webkit-appearance: none;
+}
+.contactForm textarea{
+resize: none;
+padding: 7px 7px 0;
+}
+.conatctBtn a{
+    padding: 12px 60px;
+}
+.header{
+  position: relative;
+  z-index: 9999;
+}
+/*Footer Css Begins*/
+footer{
+  background-color: #222222;
+  padding: 55px 0;
+}
+.footerLogo p{
+  color: #cbc9c9;
+  font-size: 16px;
+  line-height: 32px;
+  margin: 20px 0;
+}
+.footerLogo ul, .footerlinks ul{
+  list-style: none;
+  padding-left: 0;
+}
+.footerLogo ul li{
+  display: inline-block;
+  padding-right: 35px;
+  color: #fff;
+}
+.footerLogo ul li a{
+  color: #fff;
+}
+.footerLogo ul li a:hover, .footerlinks ul li a:hover, 
+.footerlinks ul li.active a{
+  color: #ff0000;
+}
+.footerlinks ul li{
+
+font-size: 16px;
+
+color: #cbc9c9;
+
+margin-bottom: 18px;
+}
+.footerlinks ul li a{
+  color: #cbc9c9;
+}
+.footerlinks h5{
+    font-size: 16px;
+    color: #fff;
+    margin: 25px 0 35px 0;
+    font-weight: bold;
+}
+.portfolioBox {
+  margin-top: 35px;
+}
+/*Footer Css End*/
+/*Copy RIGHT sec css Start*/
+.copyrightSec{
+  background-color: #bb8fc4;
+  padding: 12px 0;
+}
+.copyrightSec p{
+  margin:0;
+  color: #fff;
+  font-size: 16px;
+  text-align: right;
+}
+.getToch p{
+  color: rgb(151, 152, 153);
+  font-size: 16px;
+  width: 90%;
+  padding-bottom: 15px;
+}
+.getToch input, .getToch textarea, .brandStep-form input, .brandStep-form textarea, 
+.getStart-Form input, .getStart-Form textarea, .getStart-Form select{
+   background-color: rgb(255, 255, 255);
+   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+   width: 100%;
+   height: 45px;
+   border: none;
+   padding-left: 15px;
+   color: rgb(151, 152, 153);
+   font-size: 18px;
+   outline: none;
+   margin-bottom: 20px;
+}
+.getToch input:focus, .brandStep-form input:focus, .brandStep-form textarea:focus{
+   outline: none;
+}
+.getToch input::-webkit-input-placeholder { /* Edge */
+    color: rgb(151, 152, 153);
+     font-size: 16px;
+     font-weight: 500;
+}
+.getToch input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(151, 152, 153);
+     font-size: 16px;
+      font-weight: 500;
+}
+.getToch input::placeholder {
+    color: rgb(151, 152, 153);
+    font-size: 16px;
+    font-weight: 500;
+}
+.getToch input:focus, .brandStep-form input:focus, .brandStep-form textarea:focus{
+   outline: none;
+}
+.getToch textarea::-webkit-input-placeholder { /* Edge */
+    color: rgb(151, 152, 153);
+     font-size: 16px;
+     font-weight: 500;
+}
+.getToch textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(151, 152, 153);
+     font-size: 16px;
+      font-weight: 500;
+}
+.getToch textarea::placeholder {
+    color: rgb(151, 152, 153);
+    font-size: 16px;
+    font-weight: 500;
+}
+.getToch textarea, .brandStep-form textarea, .getStart-Form textarea {
+   resize: none;
+   height: 135px;
+   padding-top: 15px;
+   margin-top: 5px;
+   font-size: 16px;
+}
+.getToch .bannerbtn {
+   padding-top: 10px;
+   text-align: right;
+}
+.getToch .bannerbtn a{
+   padding: 12px 65px;
+   font-size: 18px;
+}
+.getStart-Form .agrmentSheck label {
+   font-size: 16px;
+}
+.getStart-Form .agrmentSheck label em{
+   font-style: normal;
+   padding-left: 28px;
+}
+/*Mobile dev Css Ends:*/
+/* MSQ Responsive Start */
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {}
+
+@media only screen and (min-width: 967px) and (max-width: 1200px) {
+.homeBanner .carousel-caption {
+    z-index: 000;
+}
+.homeBanner .carousel-inner img {
+    height: auto;
+    min-height: 615px;
+}
+.homeBanner .carousel-control-next-icon, .homeBanner .carousel-control-prev-icon {
+    width: 40px;
+    height: 40px;
+}
+.homeBanner .bannerText {
+        top: 0;
+        /* height: 80vh; */
+}
+.homeBanner .bannerText {
+    padding: 25px 0;
+}
+.bannerText h1 {
+    font-size: 40px;
+}
+.bannerText h6 {
+    font-size: 15px;
+    /*width: 100%;*/
+}
+.bannerText p {
+    font-size: 14px;
+    /*line-height: initial;*/
+}
+.bannerbtn {
+    padding-top: 25px;
+}
+.bannerBottom {
+    text-align: center;
+}
+.bannerBottom ul li {
+    margin-left: 0;
+}
+.bannerBottom h2 {
+    font-size: 15px;
+    text-align: center;
+    top: 0;
+}
+.bannerBottom a {
+    font-size: 14px;
+}
+.bannerBottom p {
+    font-size: 12px;
+}
+.requestbtn a {
+    padding: 12px 8px;
+    font-size: 14px; 
+    width: 86%; 
+    display: block; 
+    margin: 0 auto; 
+    font-size: 12px;
+}
+.bannerbtn a, .aboutbtn a{
+   font-size: 14px;
+} 
+.tabBackground p {
+    font-size: 15px;
+}
+.homeTabs .nav-link, .homeTabs .nav-tabs .nav-item.show .nav-link, .homeTabs .nav-tabs .nav-link.active {
+    font-size: 17px;
+}
+.navigation ul li a {
+    font-size: 14px;
+    padding: 0px 0px 0px 13px;
+}
+.navigation ul {
+    margin: 0px 0 0 0;
+}
+.bannerBottom ul li:last-child:after {
+    content: '';
+    position: absolute;
+    left: auto;
+    bottom: 0px;
+    width: 0.1em;
+    height: 55px;
+    background-color: #CB001A;
+    display: block;
+    transition: width .6s;
+    top: auto;
+    right: -25px;
+}
+.bannerBottom ul li:first-child:after {
+  display:none; 
+}
+.aboutpara {
+    padding: 0 0 0 5px;
+}
+.aboutpara p {
+    font-size: 15px;
+    line-height: 26px;
+    padding-top: 10px;
+}
+.tabBackground {
+    margin: 25px 0;
+}
+.tabBackground:after {
+    border-width: 100px 100px 0 0;
+    bottom: -108px;
+}
+.aboutimg img {
+    padding-right: 25px;
+    width: 100%;
+}
+.testimonials {
+    padding: 45px 0;
+}
+.testimonialsHeading h2, .portfolioHeading h4 {
+    font-size: 25px;
+}
+.testimonialsHeading p, .testimonialtxt h5 a, .portfolioBox p {
+  font-size: 14px;
+  width: 100%; 
+  line-height: 23px;
+}
+.testimonialtxt p br{
+  display: none;
+}
+.testimonialtxt h4 {
+    font-size: 20px;
+}
+.testimonials .carousel .carousel-indicators {
+    bottom: -25px;
+}
+.portfolioSec {
+    padding: 45px 0 15px 0;
+}
+.portfolioHeading p {
+    line-height: 24px;
+    padding-top: 0;
+    font-size: 14px;
+}
+.portfolioBox img {
+    padding: 25px 0 20px 0;
+}
+.portfolioBox h4{
+  font-size: 18px;
+}
+.brandLogs nav > div a.nav-item.nav-link.active:after, .brandLogs nav > div a.nav-item.nav-link:hover:after, .brandLogs nav > div a.nav-item.nav-link:focus:after {
+    left: 15px;
+}
+.brandLogs nav > div a.nav-item.nav-link, .brandLogs nav > div a.nav-item.nav-link.active {
+    padding: 20px 30px 0 0;
+    font-size: 15px;
+}
+.contactDetail {
+    padding-left: 0;
+}
+.contactDetail h4 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.contactDetail p {
+    line-height: 27px;
+    font-size: 16px;
+    width: 100%;
+}
+.contactDetail h5, .contactDetail h6 {
+    padding-top: 28px;
+    font-size: 20px;
+}
+.contactDetail a {
+    font-size: 18px;
+}
+.contactDetail h6 {
+    padding-top: 40px;
+}
+.contactForm h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.contactForm {
+    padding: 30px 4px;
+    margin-top: 30px;
+}
+.contactForm .form-group {
+    margin-bottom: 18px;
+    position: relative;
+}
+.contactForm input::-webkit-input-placeholder { /* Edge */
+      font-size: 12px;
+}
+.contactForm input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      font-size: 12px;
+}
+.contactForm input::placeholder {
+      font-size: 12px;
+}
+.contactForm textarea::-webkit-input-placeholder { /* Edge */
+      font-size: 12px;
+}
+.contactForm textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      font-size: 12px;
+}
+.contactForm textarea::placeholder {
+      font-size: 12px;
+}
+.contactForm select {
+    font-size: 12px;
+}
+.footerLogo img {
+width: 80%;
+}
+.footerLogo p {
+    color: #cbc9c9;
+    font-size: 12px;
+    line-height: 25px;
+    margin: 8px 0;
+
+}
+.footerlinks h5 {
+    font-size: 14px;
+    margin: 10px 0 25px 0;
+}
+.footerlinks ul li {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+footer {
+    padding: 35px 0;
+}
+.copyrightSec {
+    padding: 10px 0;
+}
+.copyrightSec p {
+    font-size: 12px;
+}
+.homeBanner .bannerText.appDev img {
+    width: 65%;
+}
+.bannerText.appDev p {
+    font-size: 14px;
+    padding: 8px 18px;
+    margin-bottom: 4px;
+}
+.homeBanner .bannerText.seo ul li {
+    padding: 15px 25px 0px 25px;
+    font-size: 18px;
+}
+.homeBanner .bannerText.pardotLogo img {
+    width: 70%;
+}
+.webText .slick-prev {
+    left: -40px;
+    outline: none;
+}
+.webText .slick-arrow {
+    font-size: 25px;
+    height: 30px;
+    width: 30px;
+}
+.webText .slick-next {
+    right: -35px;
+}
+.innerbannerSec .overlay h1 {
+    font-size: 40px;
+}
+.crmText h2, .seoText h2, .webText h2, .mobileText h2, .getStart-Heading h2, .webText h3 {
+    font-size: 30px;
+}
+.crmSec .bannerbtn a, .seoSec .bannerbtn a, .webSec .bannerbtn a {
+    padding: 12px 8px;
+}
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 966px) {
+ .homeBanner .carousel-caption {
+    z-index: 000;
+}
+.homeBanner .carousel-inner img {
+    height: auto;
+    min-height: 615px;
+}
+.homeBanner .carousel-control-next-icon, .homeBanner .carousel-control-prev-icon {
+    width: 40px;
+    height: 40px;
+}
+.homeBanner .bannerText {
+        top: -130px;
+        /* height: 60vh; */
+}
+.homeBanner .bannerText {
+    padding: 25px 0;
+}
+.bannerText h1 {
+    font-size: 35px;
+}
+.bannerText h6 {
+    font-size: 15px;
+    /*width: 100%;*/
+}
+.bannerText p {
+    font-size: 14px;
+    /*line-height: initial;*/
+}
+.bannerbtn {
+    padding-top: 25px;
+}
+.bannerBottom {
+    text-align: center;
+}
+.bannerBottom ul li {
+    margin-left: 0;
+}
+.bannerBottom h2 {
+    font-size: 15px;
+    text-align: center;
+    top: 0;
+}
+.bannerBottom a {
+    font-size: 14px;
+}
+.bannerBottom p {
+    font-size: 12px;
+}
+.requestbtn a {
+    padding: 12px 8px;
+    font-size: 14px; 
+    width: 86%; 
+    display: block; 
+    margin: 0 auto; 
+    font-size: 12px;
+}
+.bannerbtn a, .aboutbtn a{
+   font-size: 14px;
+} 
+.tabBackground p {
+    font-size: 15px;
+}
+.homeTabs .nav-link, .homeTabs .nav-tabs .nav-item.show .nav-link, .homeTabs .nav-tabs .nav-link.active {
+    font-size: 17px;
+}
+.logo img {
+    width: 100%;
+}
+.navigation ul li a {
+    font-size: 14px;
+    padding: 0px 0px 0px 13px;
+}
+.navigation ul {
+    margin: 0px 0 0 0;
+}
+.bannerBottom ul li:last-child:after {
+    content: '';
+    position: absolute;
+    left: auto;
+    bottom: 0px;
+    width: 0.1em;
+    height: 55px;
+    background-color: #CB001A;
+    display: block;
+    transition: width .6s;
+    top: auto;
+    right: -25px;
+}
+.bannerBottom ul li:first-child:after {
+  display:none; 
+}
+.aboutpara {
+    padding: 0 0 0 5px;
+}
+.aboutpara p {
+    font-size: 15px;
+    line-height: 26px;
+    padding-top: 10px;
+}
+.tabBackground {
+    margin: 25px 0;
+}
+.tabBackground:after {
+    border-width: 100px 100px 0 0;
+    bottom: -108px;
+}
+.aboutimg img {
+    padding-right: 25px;
+    width: 100%;
+}
+.testimonials {
+    padding: 45px 0;
+}
+.testimonialsHeading h2, .portfolioHeading h4 {
+    font-size: 25px;
+}
+.testimonialsHeading p, .testimonialtxt h5 a, .portfolioBox p {
+  font-size: 14px;
+  width: 100%; 
+  line-height: 23px;
+}
+.testimonialtxt p br{
+  display: none;
+}
+.testimonialtxt h4 {
+    font-size: 20px;
+}
+.testimonials .carousel .carousel-indicators {
+    bottom: -25px;
+}
+.portfolioSec {
+    padding: 45px 0 15px 0;
+}
+.portfolioHeading p {
+    line-height: 24px;
+    padding-top: 0;
+    font-size: 14px;
+}
+.portfolioBox img {
+    padding: 25px 0 20px 0;
+}
+.portfolioBox h4{
+  font-size: 18px;
+  /*min-height: 45px;*/
+}
+.brandLogs nav > div a.nav-item.nav-link.active:after, .brandLogs nav > div a.nav-item.nav-link:hover:after, .brandLogs nav > div a.nav-item.nav-link:focus:after {
+    left: 15px;
+}
+.brandLogs nav > div a.nav-item.nav-link, .brandLogs nav > div a.nav-item.nav-link.active {
+    padding: 20px 30px 0 0;
+    font-size: 15px;
+}
+.contactDetail {
+    padding-left: 0;
+}
+.contactDetail h4 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.contactDetail p {
+    line-height: 27px;
+    font-size: 16px;
+    width: 100%;
+}
+.contactDetail h5, .contactDetail h6 {
+    padding-top: 28px;
+    font-size: 20px;
+}
+.contactDetail a {
+    font-size: 18px;
+}
+.contactDetail h6 {
+    padding-top: 40px;
+}
+.contactForm h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.contactForm {
+    padding: 30px 4px;
+    margin-top: 30px;
+}
+.contactForm .form-group {
+    margin-bottom: 18px;
+    position: relative;
+}
+.contactForm input::-webkit-input-placeholder { /* Edge */
+      font-size: 12px;
+}
+.contactForm input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      font-size: 12px;
+}
+.contactForm input::placeholder {
+      font-size: 12px;
+}
+.contactForm textarea::-webkit-input-placeholder { /* Edge */
+      font-size: 12px;
+}
+.contactForm textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      font-size: 12px;
+}
+.contactForm textarea::placeholder {
+      font-size: 12px;
+}
+.contactForm select {
+    font-size: 12px;
+}
+.footerLogo img {
+width: 80%;
+}
+.footerLogo p {
+    color: #cbc9c9;
+    font-size: 12px;
+    line-height: 25px;
+    margin: 8px 0;
+
+}
+.footerlinks h5 {
+    font-size: 14px;
+    margin: 10px 0 25px 0;
+}
+.footerlinks ul li {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+footer {
+    padding: 35px 0;
+}
+.copyrightSec {
+    padding: 10px 0;
+}
+.copyrightSec p {
+    font-size: 12px;
+    /*text-align: center;*/
+}
+.homeBanner .bannerText.appDev img {
+    width: 65%;
+}
+.bannerText.appDev p {
+    font-size: 14px;
+    padding: 8px 18px;
+    margin-bottom: 4px;
+}
+.homeBanner .bannerText.seo ul li {
+    padding: 15px 25px 0px 25px;
+    font-size: 18px;
+}
+.homeBanner .bannerText.pardotLogo img {
+    width: 70%;
+}
+
+.innerbannerSec img {
+    min-height: 250px;
+}
+.innerbannerSec .overlay h1 {
+    font-size: 30px;
+}
+.innerbannerSec .overlay {
+    top: 60px;
+}
+.crmText, .seoText, .webText, .mobileSec, .getStarted {
+    padding: 35px 0 25px 0;
+}
+.crmText h2, .seoText h2, .webText h2, .mobileText h2, .getStart-Heading h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.crmText p, .seoText p, .webText p, .blogdetailBox p, .mobileText p, .getStart-Heading p {
+    font-size: 15px;
+}
+.nativeApp h4 {
+    font-size: 20px;
+}
+.nativeApp ul li {
+    font-size: 15px;
+}
+.mobileImg {
+  margin-top: 45px;
+}
+.getStart-Form label {
+    font-size: 15px;
+    margin: 4px 0;
+}
+.getToch input, .getToch textarea, .brandStep-form input, .brandStep-form textarea, 
+.getStart-Form input, .getStart-Form textarea, .getStart-Form select {
+    font-size: 15px;
+}
+.mobileService ul li label {
+    font-size: 12px;
+}
+.mobSlider-Input ul li input {
+    /*width: auto;*/
+    font-size: 14px;
+}
+.mobSlider-Input ul li, .mobSlider-Input ul li input {
+    width: 50%;
+}
+.mobSlider-Input ul li span, .getStart-Form .agrmentSheck label {
+    font-size: 14px;
+}
+.agrmentSheck br{
+  display: none;
+}
+.getStart-Form .agrmentSheck label em {
+    font-style: normal;
+    padding-left: 0;
+}
+.submitbtn button {
+    padding: 10px 50px;
+    font-size: 16px;
+}
+.brandHeading h2, .brandthanku-Heading h2{
+      font-size: 28px;
+}
+.canvas-wrap canvas#canvas {
+    position: relative;
+    width: 145px;
+    height: 65px;
+}
+.canvas-wrap {
+    top: 0px;
+    float: right;
+    right: 0px;
+}
+span#procent {
+    top: 30%;
+    right: 33px;
+    font-size: 19px;
+}
+.brandSec {
+    padding: 40px 0;
+    overflow: hidden;
+}
+.footerLogo p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+.brandStep-form {
+    padding-top: 25px;
+}
+.brandStep-form h4 {
+    font-size: 16px;
+    width: 100%;
+}
+.brandStepara p {
+    font-size: 14px;
+}
+.brandStep-upload .btn {
+    font-size: 13px;
+}
+.brandStep-formbtn {
+    text-align: center;
+}
+.brandStep-formbtn ul li {
+    padding-left: 0px;
+}
+.brandStep-threebtn {
+    margin-top: 15px;
+}
+.brandStep-formbtn .bannerbtn a {
+    padding: 12px 35px;
+    font-weight: 600;
+}
+.brandthanku-Heading h3 {
+    font-size: 15px;
+}
+.seoSec .bannerbtn, .webSec .bannerbtn {
+    margin-bottom: 25px;
+}
+.webText h3 {
+    font-size: 30px;
+}
+.webText .slick-prev {
+    left: 0;
+    outline: none;
+}
+.webText .slick-next {
+    right: 0;
+    outline: none;
+}
+.webText .slick-arrow {
+    font-size: 22px;
+    height: 25px;
+    width: 24px;
+}
+.webText h4 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+.seoBox .overlay h2 {
+    font-size: 20px;
+}
+.contactusSec {
+    padding: 45px 0;
+}
+.contactusText .contactus-detail {
+    padding-left: 5px;
+}
+.contactus-detail h5, .contactus-detail h6 a {
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+.contactusText h2, .getToch h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+.getToch p {
+    font-size: 14px;
+    width: 100%;
+    padding-bottom: 5px;
+}
+.getToch .bannerbtn {
+    padding-top: 5px;
+    text-align: center;
+}
+.blogBox {
+    position: relative;
+    margin-top: 35px;
+}
+.blogBox h2, .brandBox-text h2 {
+    font-size: 20px;
+    margin: 15px 0 8px 0;
+}
+.blogBox p {
+    line-height: 22px;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+.blogdetailSec {
+    padding: 45px 0;
+}
+.blogdetailBox h2 {
+    font-size: 20px;
+    margin: 8px 0 20px 0;
+}
+.blogdetailBox h6 {
+    font-size: 12px;
+    padding: 8px 12px;
+    margin: 15px 0 8px 0;
+}
+.navigation ul li > .dropdown-menu::after {
+    left: 14px;
+}
+.header .collapse:not(.show) {
+  display: inline-block;
+}
+.header .navbar-toggler {
+  display: none;
+}
+.header .navbar-collapse {
+  flex-basis: 65%;
+}
+.header .custom-nav ul li {
+  padding-left: 14px;
+}
+.header .custom-nav ul li a, .header .custom-nav ul li a button {
+  font-size: 14px;
+}
+.form-control {
+  border: transparent;
+  border-bottom: 1px solid #e4e7ea;
+}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+ header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 12px 0 12px 0;
+    z-index: 1;
+    background: #222222;
+}
+.socialIcons ul li {
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 12px;
+}
+header .row.align-items-center .col-10{
+  padding-left: 0;
+}
+header.sticky {
+    position: relative;
+}
+.homeBanner .carousel-caption {
+    z-index: 000;
+}
+.homeBanner .carousel-inner img {
+    height: auto;
+    min-height: 530px;
+}
+.homeBanner .carousel-control-next-icon, .homeBanner .carousel-control-prev-icon {
+    width: 40px;
+    height: 40px;
+}
+.homeBanner .bannerText {
+    align-items: flex-start;
+    top: 0;
+    height: auto;
+}
+.homeBanner .bannerText {
+    padding: 25px 0;
+}
+.bannerText h1 {
+    font-size: 26px;
+}
+.bannerText h6 {
+    font-size: 15px;
+    width: 100%;
+}
+.bannerText p {
+    font-size: 14px;
+    line-height: initial;
+}
+.bannerbtn {
+    padding-top: 30px;
+}
+.bannerBottom {
+    text-align: center;
+}
+.bannerBottom ul li {
+    margin-left: 0;
+}
+.bannerBottom h2 {
+    font-size: 20px;
+    text-align: center;
+    top: 0;
+}
+.bannerBottom a {
+    font-size: 20px;
+}
+.bannerBottom ul li:first-child {
+    margin-bottom: 1rem;
+}
+.requestbtn a {
+    padding: 12px 8px;
+    font-size: 14px; 
+    width: 70%; 
+    display: block; 
+    margin: 0 auto; 
+    font-size: 12px;
+}
+.bannerbtn a, .aboutbtn a{
+   font-size: 14px;
+    /*padding: 12px 18px;*/
+}
+.homeTabs .nav-link,.homeTabs .nav-tabs .nav-item.show .nav-link, .homeTabs .nav-tabs .nav-link.active {
+    font-size: 12px;
+}
+.homeTabs .justify-content-md-center {
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}
+.bannerBottom ul li:first-child::after {
+display: none;
+
+}
+.navigation ul li a {
+    font-size: 13px;
+    padding: 0px 0px 0px 5px;
+}
+.homeTabs {
+    padding: 35px 0;
+}
+.tabBackground p {
+    font-size: 14px;
+}
+.aboutpara {
+    padding: 0 0 0 0;
+    position: relative;
+}
+.pad-right {
+    padding-right: 15px;
+}
+.tabBackground:after{
+  display: none;
+}
+.aboutpara p {
+    font-size: 14px;
+    line-height: 26px;
+    padding-top: 4px;
+}
+.aboutbtn {
+    margin-top: 35px;
+}
+.aboutimg img {
+    margin: 70px auto 0;
+    display: block;
+    width: 90%;
+}
+.homeTabs .row.justify-content-end {
+      margin-right: 15px;
+    margin-left: 15px;
+}
+.tabBackground {
+    padding: 20px 25px;
+    margin: 25px 0;
+}
+.testimonials {
+    padding: 45px 0;
+}
+.testimonialsHeading h2, .portfolioHeading h4 {
+    font-size: 25px;
+}
+.testimonialsHeading p, .testimonialtxt h5 a, .portfolioBox p {
+  font-size: 14px;
+  width: 100%; 
+  line-height: 23px;
+}
+.testimonialtxt p br{
+  display: none;
+}
+.testimonialtxt h4 {
+    font-size: 20px;
+}
+.testimonials .carousel .carousel-indicators {
+    bottom: -25px;
+}
+.portfolioSec {
+    padding: 45px 0 15px 0;
+}
+.portfolioHeading p {
+    line-height: 24px;
+    padding-top: 0;
+    font-size: 14px;
+}
+.portfolioBox img {
+    padding: 25px 0 20px 0;
+}
+.portfolioBox h4{
+  font-size: 18px;
+  min-height: 45px;
+}
+.brandLogs nav > div a.nav-item.nav-link, .brandLogs nav > div a.nav-item.nav-link.active {
+    padding: 20px 30px 0 0;
+    font-size: 15px;
+}
+.brandLogs nav > div a.nav-item.nav-link.active:after {
+   display: none;
+}
+.brandLogs {
+    padding: 20px 0 50px 0;
+}
+.brangImg img {
+    padding: 0px 0 0 0;
+    width: 85%;
+}
+.contactDetail {
+    padding-top: 10px;
+    padding-left: 0;
+}
+.contactDetail h4 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.contactDetail p {
+    line-height: 25px;
+    font-size: 14px;
+    width: 100%;
+}
+.contactDetail h5, .contactDetail h6 {
+    padding-top: 20px;
+    font-size: 20px;
+}
+.contactDetail h6 {
+    padding-top: 25px;
+}
+.contactDetail a {
+    font-size: 18px;
+}
+.contactForm h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.contactForm {
+    padding: 30px 4px;
+    margin-top: 30px;
+}
+.contactForm .form-group {
+    margin-bottom: 18px;
+    position: relative;
+}
+.contactForm input::-webkit-input-placeholder { /* Edge */
+      font-size: 12px;
+}
+.contactForm input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      font-size: 12px;
+}
+.contactForm input::placeholder {
+      font-size: 12px;
+}
+.contactForm textarea::-webkit-input-placeholder { /* Edge */
+      font-size: 12px;
+}
+.contactForm textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      font-size: 12px;
+}
+.contactForm textarea::placeholder {
+      font-size: 12px;
+}
+.contactForm select {
+    font-size: 12px;
+}
+.footerLogo img {
+ margin: 0 auto;
+display: block;
+width: 80%;
+}
+.footerLogo p {
+    color: #cbc9c9;
+    font-size: 12px;
+    line-height: 25px;
+    margin: 8px 0;
+
+}
+.footerlinks h5 {
+    font-size: 14px;
+    margin: 10px 0 25px 0;
+}
+.footerlinks ul li {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+footer {
+    padding: 35px 0;
+}
+.copyrightSec {
+    padding: 10px 0;
+}
+.copyrightSec p {
+    font-size: 12px;
+    text-align: center;
+}
+.logo img{
+  width: 100%;
+}
+.navigation ul {
+
+    text-align: right;
+    margin: 6px 0 0 0;
+    padding-left: 0;
+
+}
+.bannerText.appDev p {
+ font-size: 11px;
+    padding: 8px;
+    margin-bottom: 4px;
+}
+.homeBanner .bannerText.pardotLogo img {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+}
+.homeBanner .bannerText.seo ul li {
+    padding: 15px 10px 0 10px;
+    font-size: 16px;
+}
+.homeBanner .bannerText.appDev ul li {
+    padding: 5px 2px 0 2px;
+}
+.homeBanner .bannerText.appDev img {
+    width: 85%;
+}
+
+.innerbannerSec img {
+    min-height: 170px;
+}
+.innerbannerSec .overlay h1 {
+    font-size: 30px;
+}
+.innerbannerSec .overlay {
+    top: 0;
+}
+.crmText, .seoText, .webText, .mobileSec, .getStarted {
+    padding: 35px 0 25px 0;
+}
+.crmText h2, .seoText h2, .webText h2, .mobileText h2, .getStart-Heading h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.crmText p, .seoText p, .webText p, .blogdetailBox p, .mobileText p, .getStart-Heading p {
+    font-size: 15px;
+}
+.nativeApp h4 {
+    font-size: 20px;
+}
+.nativeApp ul li {
+    font-size: 15px;
+}
+.mobileImg {
+  margin-top: 45px;
+}
+.getStart-Form label {
+    font-size: 15px;
+    margin: 4px 0;
+}
+.getToch input, .getToch textarea, .brandStep-form input, .brandStep-form textarea, 
+.getStart-Form input, .getStart-Form textarea, .getStart-Form select {
+    font-size: 15px;
+}
+.mobileService ul li label {
+    font-size: 13px;
+}
+.mobSlider-Input ul li input {
+    /*width: auto;*/
+    font-size: 14px;
+}
+.mobSlider-Input ul li, .mobSlider-Input ul li input {
+    width: 50%;
+}
+.mobSlider-Input ul li span, .getStart-Form .agrmentSheck label {
+    font-size: 14px;
+}
+.agrmentSheck br{
+  display: none;
+}
+.getStart-Form .agrmentSheck label em {
+    font-style: normal;
+    padding-left: 0;
+}
+.submitbtn button {
+    padding: 10px 50px;
+    font-size: 16px;
+}
+.brandHeading h2, .brandthanku-Heading h2{
+      font-size: 28px;
+}
+.canvas-wrap canvas#canvas {
+    position: relative;
+    width: 145px;
+    height: 65px;
+}
+.canvas-wrap {
+    top: 0px;
+    float: right;
+    right: 0px;
+}
+span#procent {
+    top: 30%;
+    right: 33px;
+    font-size: 19px;
+}
+.brandSec {
+    padding: 40px 0;
+    overflow: hidden;
+}
+.footerLogo p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+.brandStep-form {
+    padding-top: 25px;
+}
+.brandStep-form h4 {
+    font-size: 16px;
+    width: 100%;
+}
+.brandStepara p {
+    font-size: 14px;
+}
+.brandStep-upload .btn {
+    font-size: 13px;
+}
+.brandStep-formbtn {
+    text-align: center;
+}
+.brandStep-formbtn ul li {
+    padding-left: 0px;
+}
+.brandStep-threebtn {
+    margin-top: 15px;
+}
+.brandStep-formbtn .bannerbtn a {
+    padding: 12px 35px;
+    font-weight: 600;
+}
+.brandthanku-Heading h3 {
+    font-size: 15px;
+}
+.seoSec .bannerbtn, .webSec .bannerbtn {
+    margin-bottom: 25px;
+}
+.webText h3 {
+    font-size: 30px;
+}
+.webText .slick-prev {
+    left: 0;
+    outline: none;
+}
+.webText .slick-next {
+    right: 0;
+    outline: none;
+}
+.webText .slick-arrow {
+    font-size: 22px;
+    height: 25px;
+    width: 24px;
+}
+.webText h4 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+.seoBox .overlay h2 {
+    font-size: 20px;
+}
+.contactusSec {
+    padding: 45px 0;
+}
+.contactusText .contactus-detail {
+    padding-left: 15px;
+}
+.contactus-detail h5, .contactus-detail h6 a {
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+.contactusText h2, .getToch h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+.getToch p {
+    font-size: 14px;
+    width: 100%;
+    padding-bottom: 5px;
+}
+.getToch .bannerbtn {
+    padding-top: 5px;
+    text-align: center;
+}
+.blogBox {
+    position: relative;
+    margin-top: 35px;
+}
+.blogBox h2, .brandBox-text h2 {
+    font-size: 20px;
+    margin: 15px 0 8px 0;
+}
+.blogBox p {
+    line-height: 22px;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+.blogdetailSec {
+    padding: 45px 0;
+}
+.blogdetailBox h2 {
+    font-size: 20px;
+    margin: 8px 0 20px 0;
+}
+.blogdetailBox h6 {
+    font-size: 12px;
+    padding: 8px 12px;
+    margin: 15px 0 8px 0;
+}
+.crmSec .bannerbtn a, .seoSec .bannerbtn a, .webSec .bannerbtn a {
+    padding: 12px 8px;
+}
+.navigation ul li > .dropdown-menu::after {
+    left: 14px;
+}
+.sidebar-show .collapse:not(.show) {
+  display: block;
+}
+.header .custom-nav ul li {
+  display: block;
+  padding-left: 0;
+  padding-bottom: 12px;
+}
+.header .custom-nav {
+    text-align: center;
+}
+.homeBanner img {
+  height: 250px;
+}
+.homeBanner .bannerText {
+  top: 80px!important;
+}
+.form-control {
+  border: transparent;
+  border-bottom: 1px solid #e4e7ea;
+}
+}
+
+@media only screen and (min-width: 300px) and (max-width: 479px) {
+  header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 12px 0 12px 0;
+    z-index: 1;
+    background: #222222;
+}
+.socialIcons {
+    text-align:center;
+}
+.socialIcons ul {
+    padding-left: 0;
+}
+.socialIcons ul li {
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 12px;
+}
+header .row.align-items-center {
+    display: flex;
+    flex-flow: row-reverse wrap;
+}
+header .row.align-items-center .col-10{
+  padding-left: 0;
+}
+header .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+}
+header.sticky {
+    position: relative;
+}
+.homeBanner .carousel-caption {
+    z-index: 000;
+}
+.homeBanner .carousel-inner img {
+    height: auto;
+    min-height: 555px;
+}
+.homeBanner .carousel-control-next-icon, .homeBanner .carousel-control-prev-icon {
+    width: 40px;
+    height: 40px;
+}
+.homeBanner .bannerText {
+    align-items: flex-start;
+        top: 0;
+}
+.homeBanner .bannerText {
+    padding: 25px 0;
+}
+.bannerText h1 {
+    font-size: 30px;
+}
+.bannerText h6 {
+    font-size: 15px;
+    width: 100%;
+}
+.bannerText p {
+    font-size: 14px;
+    line-height: initial;
+}
+.bannerbtn {
+    padding-top: 30px;
+}
+.bannerBottom {
+    text-align: center;
+}
+.bannerBottom ul li {
+    margin-left: 0;
+}
+.bannerBottom h2 {
+    font-size: 20px;
+    text-align: center;
+    top: 0;
+}
+.bannerBottom a {
+    font-size: 20px;
+}
+.bannerBottom ul li:first-child {
+    margin-bottom: 1rem;
+}
+.requestbtn a {
+    padding: 12px 18px;
+    font-size: 14px;
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+}
+.bannerbtn a, .aboutbtn a{
+   font-size: 14px;
+    /*padding: 12px 18px;*/
+}
+.homeTabs .nav-link,.homeTabs .nav-tabs .nav-item.show .nav-link, .homeTabs .nav-tabs .nav-link.active {
+    font-size: 12px;
+}
+.homeTabs {
+    padding: 35px 0;
+}
+.tabBackground p {
+    font-size: 14px;
+}
+.aboutpara {
+    padding: 0 0 0 0;
+    position: relative;
+}
+.pad-right {
+    padding-right: 15px;
+}
+.tabBackground:after{
+  display: none;
+}
+.aboutpara p {
+    font-size: 14px;
+    line-height: 26px;
+    padding-top: 4px;
+}
+.aboutbtn {
+    margin-top: 35px;
+}
+.aboutimg img {
+    margin: 70px auto 0;
+    display: block;
+    width: 90%;
+}
+.homeTabs .row.justify-content-end {
+      margin-right: 15px;
+    margin-left: 15px;
+}
+.tabBackground {
+    padding: 20px 25px;
+    margin: 25px 0;
+}
+.testimonials {
+    padding: 45px 0;
+}
+.testimonialsHeading h2, .portfolioHeading h4 {
+    font-size: 25px;
+}
+.testimonialsHeading p, .testimonialtxt h5 a, .portfolioBox p {
+    font-size: 14px;
+}
+.testimonialtxt p br{
+  display: none;
+}
+.testimonialtxt h4 {
+    font-size: 20px;
+}
+.testimonials .carousel .carousel-indicators {
+    bottom: -25px;
+}
+.portfolioSec {
+    padding: 45px 0 15px 0;
+}
+.portfolioHeading p {
+    line-height: 24px;
+    padding-top: 0;
+    font-size: 14px;
+}
+.portfolioBox img {
+    padding: 25px 0 20px 0;
+}
+.portfolioBox h4{
+  font-size: 20px;
+}
+.brandLogs nav > div a.nav-item.nav-link, .brandLogs nav > div a.nav-item.nav-link.active {
+    padding: 20px 30px 0 0;
+    font-size: 15px;
+}
+.brandLogs nav > div a.nav-item.nav-link.active:after {
+   display: none;
+}
+.brandLogs {
+    padding: 20px 0 50px 0;
+}
+.brangImg img {
+    padding: 0px 0 0 0;
+}
+.contactDetail {
+    padding-top: 10px;
+    padding-left: 0;
+}
+.contactDetail h4 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.contactDetail p {
+    line-height: 25px;
+    font-size: 14px;
+    width: 100%;
+}
+.contactDetail h5, .contactDetail h6 {
+    padding-top: 20px;
+    font-size: 20px;
+}
+.contactDetail h6 {
+    padding-top: 25px;
+}
+.contactDetail a {
+    font-size: 18px;
+}
+.contactForm h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.contactForm {
+    padding: 30px 4px;
+    margin-top: 30px;
+}
+.contactForm .form-group {
+    margin-bottom: 18px;
+    position: relative;
+}
+.contactForm input::-webkit-input-placeholder { /* Edge */
+      font-size: 12px;
+}
+.contactForm input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      font-size: 12px;
+}
+.contactForm input::placeholder {
+      font-size: 12px;
+}
+.contactForm textarea::-webkit-input-placeholder { /* Edge */
+      font-size: 12px;
+}
+.contactForm textarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      font-size: 12px;
+}
+.contactForm textarea::placeholder {
+      font-size: 12px;
+}
+.contactForm select {
+    font-size: 12px;
+}
+.footerLogo img {
+    margin: 0 auto;
+    display: block;
+}
+.footerlinks h5 {
+    font-size: 14px;
+    margin: 10px 0 25px 0;
+}
+.footerlinks ul li {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+footer {
+    padding: 35px 0;
+}
+.copyrightSec {
+    padding: 10px 0;
+}
+.copyrightSec p {
+    font-size: 12px;
+    text-align: center;
+}
+.logo img{
+  width: 100%;
+}
+.bannerText.appDev p {
+ font-size: 11px;
+    padding: 8px;
+    margin-bottom: 4px;
+}
+.homeBanner .bannerText.pardotLogo img {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+}
+.homeBanner .bannerText.seo ul li {
+    padding: 15px 10px 0 10px;
+    font-size: 16px;
+}
+.homeBanner .bannerText.appDev ul li {
+    padding: 5px 2px 0 2px;
+}
+.homeBanner .bannerText.appDev img {
+    width: 85%;
+}
+
+.innerbannerSec img {
+    min-height: 170px;
+}
+.innerbannerSec .overlay h1 {
+    font-size: 30px;
+}
+.innerbannerSec .overlay {
+    top: 0;
+}
+.crmText, .seoText, .webText, .mobileSec, .getStarted {
+    padding: 35px 0 25px 0;
+}
+.crmText h2, .seoText h2, .webText h2, .mobileText h2, .getStart-Heading h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.crmText p, .seoText p, .webText p, .blogdetailBox p, .mobileText p, .getStart-Heading p {
+    font-size: 15px;
+}
+.nativeApp h4 {
+    font-size: 20px;
+}
+.nativeApp ul li {
+    font-size: 15px;
+}
+.mobileImg {
+  margin-top: 45px;
+}
+.getStart-Form label {
+    font-size: 15px;
+    margin: 4px 0;
+}
+.getToch input, .getToch textarea, .brandStep-form input, .brandStep-form textarea, 
+.getStart-Form input, .getStart-Form textarea, .getStart-Form select {
+    font-size: 15px;
+}
+.mobileService ul li label {
+    font-size: 14px;
+}
+.mobSlider-Input ul li input {
+    /*width: auto;*/
+    font-size: 14px;
+}
+.mobSlider-Input ul li, .mobSlider-Input ul li input {
+    width: 50%;
+}
+.mobSlider-Input ul li span, .getStart-Form .agrmentSheck label {
+    font-size: 14px;
+}
+.agrmentSheck br{
+  display: none;
+}
+.getStart-Form .agrmentSheck label em {
+    font-style: normal;
+    padding-left: 0;
+}
+.submitbtn button {
+    padding: 10px 50px;
+    font-size: 16px;
+}
+.brandHeading h2, .brandthanku-Heading h2{
+      font-size: 28px;
+}
+.canvas-wrap canvas#canvas {
+    position: relative;
+    width: 145px;
+    height: 65px;
+}
+.canvas-wrap {
+    top: 0px;
+    float: right;
+    right: 0px;
+}
+span#procent {
+    top: 30%;
+    right: 33px;
+    font-size: 19px;
+}
+.brandSec {
+    padding: 40px 0;
+    overflow: hidden;
+}
+.footerLogo p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+.brandStep-form {
+    padding-top: 25px;
+}
+.brandStep-form h4 {
+    font-size: 16px;
+    width: 100%;
+}
+.brandStepara p {
+    font-size: 14px;
+}
+.brandStep-upload .btn {
+    font-size: 13px;
+}
+.brandStep-formbtn {
+    text-align: center;
+}
+.brandStep-formbtn ul li {
+    padding-left: 0px;
+}
+.brandStep-threebtn {
+    margin-top: 15px;
+}
+.brandStep-formbtn .bannerbtn a {
+    padding: 12px 35px;
+    font-weight: 600;
+}
+.brandthanku-Heading h3 {
+    font-size: 15px;
+}
+.seoSec .bannerbtn, .webSec .bannerbtn {
+    margin-bottom: 25px;
+}
+.webText h3 {
+    font-size: 30px;
+}
+.webText .slick-prev {
+    left: 0;
+    outline: none;
+}
+.webText .slick-next {
+    right: 0;
+    outline: none;
+}
+.webText .slick-arrow {
+    font-size: 22px;
+    height: 25px;
+    width: 24px;
+}
+.webText h4 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+.seoBox .overlay h2 {
+    font-size: 20px;
+}
+.contactusSec {
+    padding: 45px 0;
+}
+.contactusText .contactus-detail {
+    padding-left: 15px;
+}
+.contactus-detail h5, .contactus-detail h6 a {
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+.contactusText h2, .getToch h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+.getToch p {
+    font-size: 14px;
+    width: 100%;
+    padding-bottom: 5px;
+}
+.getToch .bannerbtn {
+    padding-top: 5px;
+    text-align: center;
+}
+.blogBox {
+    position: relative;
+    margin-top: 35px;
+}
+.blogBox h2, .brandBox-text h2 {
+    font-size: 20px;
+    margin: 15px 0 8px 0;
+}
+.blogBox p {
+    line-height: 22px;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+.blogdetailSec {
+    padding: 45px 0;
+}
+.blogdetailBox h2 {
+    font-size: 20px;
+    margin: 8px 0 20px 0;
+}
+.blogdetailBox h6 {
+    font-size: 12px;
+    padding: 8px 12px;
+    margin: 15px 0 8px 0;
+}
+.sidebar-show .collapse:not(.show) {
+  display: block;
+}
+.header .custom-nav ul li {
+  display: block;
+  padding-left: 0;
+  padding-bottom: 12px;
+}
+.header .custom-nav {
+    text-align: center;
+}
+.homeBanner img {
+  height: 250px;
+}
+.homeBanner .bannerText {
+  top: 80px!important;
+}
+.form-control {
+  border: transparent;
+  border-bottom: 1px solid #e4e7ea;
+}
+}
+/*Copy RIGHT sec css END*/
+// ie11 floating footer temp fix, react only
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  #root {
+    display: flex;
+    flex-direction: column;
+  }
+}
