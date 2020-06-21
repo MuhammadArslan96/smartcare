@@ -76,8 +76,9 @@ class DefaultLayout extends Component {
                 <Switch>
                   {
                   // this.props.loading === false ? "Loading..." :
+                  this.props.isAuthenticated === true ?
                   routes.map((route, idx) => {
-                    return  this.props.is_admin === true ||
+                    return   this.props.is_admin === true ||
                      this.props.currentUser?.isApproved === true ? (
                       <Route
                         key={idx}
@@ -87,8 +88,13 @@ class DefaultLayout extends Component {
                         render={props => (
                           <route.component {...props} />
                         )} />
-                    ) : <p> {this.props.loading===true ?  this.loading() : this.props.currentUser?.isApproved === false ? "Not Approved" : void 0 }  </p>;
-                  })}
+                    ) : <p> {this.props.loading===true ?  this.loading() : this.props.currentUser?.isApproved === false ?
+                       "Not Approved" : void 0 }  </p> 
+                       ;
+                      }) :
+                      <Redirect to='/login' />
+
+                }
                   <Redirect from="/" to="/home" />
                 </Switch>
               </Suspense>
@@ -111,11 +117,13 @@ class DefaultLayout extends Component {
 }
 
 const mapStateToProps = state => {
-  log(state.users)
+  log(state)
   return {
     currentUser : state.users.currentUser,
     is_admin : state.users.is_admin,
     loading : state.users.loading,
+    isAuthenticated : state.users.isAuthenticated,
+    
   }
 }
 export default connect(mapStateToProps,{getCurrentUser,getUsers})(DefaultLayout);

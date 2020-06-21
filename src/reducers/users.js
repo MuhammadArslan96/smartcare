@@ -2,12 +2,12 @@ import {
     USERS_LIST,
     CURRENT_USER,
     IS_ADMIN,
-    
+
   } from "../actions/type";
 //   const isEmpty = require("is-empty");
 
   const initialState = {
-    // isAuthenticated: false,
+    isAuthenticated: false,
     user: [],
     loading: true,
     currentUser:undefined,
@@ -18,14 +18,14 @@ import {
       case USERS_LIST:
         return {
           ...state,
-        //   isAuthenticated: true,
+          // isAuthenticated: true,
           user: action.payload,
           loading:false,
         };
         case CURRENT_USER:
           return {
             ...state,
-          //   isAuthenticated: true,
+            isAuthenticated: true,
             currentUser: action.payload,
             loading:false,
             is_admin:false,
@@ -33,7 +33,7 @@ import {
         case IS_ADMIN:
           return {
             ...state,
-          //   isAuthenticated: true,
+            isAuthenticated: true,
             is_admin: action.payload,
             loading:false,
           };

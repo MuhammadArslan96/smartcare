@@ -5,6 +5,7 @@ import logo from '../../../assets/img/brand/logo.png'
 import { AppNavbarBrand, AppSidebarToggler} from '@coreui/react';
 import firebase from '../../../config/index'
 import {logout} from '../../../actions/authAction'
+import {getCurrentUser} from '../../../actions/userAction'
 import { connect } from 'react-redux';
 
 const log = console.log
@@ -17,12 +18,15 @@ class Header extends Component { // eslint-disable-line react/prefer-stateless-f
   }
   componentWillMount() {
     // this.setState({isUser:true})
+    this.props.getCurrentUser();
+
     firebase.auth().onAuthStateChanged( (res) => {
       var user = firebase.auth().currentUser;
-      log(user)
       if(user !== null){
+        log(user)
         this.setState({isUser:true}) 
       }else{
+        this.setState({isUser:false}) 
         log('!user')
       }
     })
@@ -77,8 +81,9 @@ class Header extends Component { // eslint-disable-line react/prefer-stateless-f
 }
 
 const mapStateToProps = state => {
+  console.log(state.auth.isAuthenticated)
   return {
     auth: state.auth
   }
 }
-export default connect(mapStateToProps,{logout})(Header);
+export default connect(mapStateToProps,{logout,getCurrentUser})(Header);

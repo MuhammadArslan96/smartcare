@@ -6,6 +6,8 @@ import {
   REGISTER_USER,
   ERROR,
   LOGIN_USER,
+  LOG_OUT,
+  SOCIAL
 } from "./type";
 // Register User
 let log = console.log
@@ -125,12 +127,12 @@ export const loginUser = (userData,history) => dispatch => {
 };
 
 export const logout = (history) => dispatch => {
-  firebase.auth().signOut().then(function() {
+  firebase.auth().signOut().then(function(res) {
     // Sign-out successful.
     // ToastsStore.error(error.message)
     dispatch({
-      type: LOGIN_USER,
-      payload: 'logout'
+      type: LOG_OUT,
+      payload: res
     })
     localStorage.removeItem('uid')
     console.log('succes logout')
@@ -154,8 +156,14 @@ export const loginWithFb = (history) => dispatch => {
     var token = result.credential.accessToken;
     // The signed-in user info.
     var user = result.user;
-    log(token,user)
+    log(token,user,history)
     ToastsStore.success("Succesfully Signin with Facebook")
+    history.push('/home')
+    dispatch({
+      type:SOCIAL,
+      payload:user,
+    })
+
     // ...
   }).catch(function(error) {
     // Handle Errors here.
@@ -189,9 +197,11 @@ export const loginWithGmail = (history) => dispatch => {
     var user = result.user;
     log(token,user)
     ToastsStore.success("Succesfully Signin with Gmail")
+    history.push('/home')
+
     dispatch({
-      type: LOGIN_USER,
-      payload: user
+      type:SOCIAL,
+      payload:user,
     })
     }
     catch(e){

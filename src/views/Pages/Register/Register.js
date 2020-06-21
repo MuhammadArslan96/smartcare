@@ -101,13 +101,13 @@ class Register extends Component {
                   <Row>
                     <Col xs="12" sm="6">
                       <Button  type='button' onClick={() => {
-                        try{ this.props.loginWithFb() }
+                        try{ this.props.loginWithFb(this.props.history) }
                         catch(e) {console.log(e)}
                         }} className="btn-facebook mb-1" block><span>facebook</span></Button>
                     </Col>
                     <Col xs="12" sm="6">
                       <Button  onClick={() => {
-                        try{ this.props.loginWithGmail() }
+                        try{ this.props.loginWithGmail(this.props.history) }
                         catch(e) {console.log(e)}
                         }} type='button' className="btn-gmail mb-1" style={{backgroundColor:'#CF3728',color:'white'}} block><span>Gmail</span></Button>
                     </Col>

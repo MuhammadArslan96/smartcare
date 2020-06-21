@@ -6,7 +6,8 @@ import {
   MAKE_APPOINTMENT,
   USERS_LIST,
   CURRENT_USER,
-  IS_ADMIN
+  IS_ADMIN,
+  
 //   LOGIN_USER,
 } from "./type";
 // Register User
