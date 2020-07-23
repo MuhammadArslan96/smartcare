@@ -112,5 +112,16 @@ catch(e){
   log(e.message)
 }
 }
+
+export const quotationrequest = (data) => dispatch => {
+ const quotations = firebase.database().ref("quotations/");
+ quotations.push({...data})
+ 
+  // const message = firebase.messaging()
+  // message.requestPermission()
+  // .then((res) => {return message.getToken()} )
+  // .then((data) => {log(data)})
+  // .catch(err => {log(err.message)})  
+}
 // Login - get user token
 

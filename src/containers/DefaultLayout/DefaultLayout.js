@@ -20,6 +20,7 @@ import {
 } from '@coreui/react';
 // sidebar nav config
 import navigation from '../../_nav';
+import doctor_navigation from '../../doctor_nav';
 // routes config
 import routes from '../../routes';
 // import { connect } from 'http2';
@@ -50,7 +51,7 @@ class DefaultLayout extends Component {
   }
 
   render() {
-    log(this.state.isUser)
+    // log(this.state.isUser)
     return (
       <div className="app">
         <AppHeader fixed>
@@ -62,8 +63,11 @@ class DefaultLayout extends Component {
           <AppSidebar fixed display="lg">
             <AppSidebarHeader />
             <AppSidebarForm />
-            <Suspense>
-            <AppSidebarNav navConfig={navigation} {...this.props} router={router}/>
+            <Suspense >
+              {this.props.currentUser?.isApproved === true  || this.props.is_admin === true ?
+            <AppSidebarNav navConfig={this.props.is_admin !== true ? doctor_navigation :navigation} {...this.props} router={router}/>
+            :void 0
+              }
             </Suspense>
             <AppSidebarFooter />
             <AppSidebarMinimizer />
@@ -76,11 +80,11 @@ class DefaultLayout extends Component {
                 <Switch>
                   {
                   // this.props.loading === false ? "Loading..." :
-                  this.props.isAuthenticated === true ?
                   routes.map((route, idx) => {
-                    return   this.props.is_admin === true ||
-                     this.props.currentUser?.isApproved === true ? (
-                      <Route
+                    log(route,!this.props.currentUser?.name)
+                    return (  this.props?.is_admin === true ||
+                      this.props.currentUser?.isApproved === true ?
+                       <Route
                         key={idx}
                         path={route.path}
                         exact={route.exact}
@@ -88,13 +92,11 @@ class DefaultLayout extends Component {
                         render={props => (
                           <route.component {...props} />
                         )} />
-                    ) : <p> {this.props.loading===true ?  this.loading() : this.props.currentUser?.isApproved === false ?
-                       "Not Approved" : void 0 }  </p> 
-                       ;
-                      }) :
-                      <Redirect to='/login' />
-
-                }
+                        :<p> {this.props.loading===true ?  this.loading() :
+                           this.props.currentUser?.isApproved === false ? 
+                          "Not Approved" : void 0 }  </p>
+                    ) 
+                  })}
                   <Redirect from="/" to="/home" />
                 </Switch>
               </Suspense>
@@ -117,13 +119,11 @@ class DefaultLayout extends Component {
 }
 
 const mapStateToProps = state => {
-  log(state)
+  log(state.users)
   return {
     currentUser : state.users.currentUser,
     is_admin : state.users.is_admin,
     loading : state.users.loading,
-    isAuthenticated : state.users.isAuthenticated,
-    
   }
 }
 export default connect(mapStateToProps,{getCurrentUser,getUsers})(DefaultLayout);

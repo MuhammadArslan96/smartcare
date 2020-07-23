@@ -3,23 +3,96 @@ import { NavLink} from 'react-router-dom';
 import { Col, Container, Form, Input, Row } from 'reactstrap';
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import {quotationrequest} from '../../../actions/userAction'
+import { connect } from 'react-redux';
+import { SMTPClient } from 'emailjs';
+
 class Home extends Component {
+
+  state = {
+    name: '',
+    email: '',
+    user_number: '',
+    selected_service: '',
+    message: '',
+  }
+  onChange = e => this.setState({[e.target.name]: e.target.value})
+
+  onSubmit=(e) => {
+    // let priceList =[]
+    // function calculate(n,price,piece){
+    // let pieceSize = piece[0]
+    // let packSize = piece[1]
+    // let boxSize = piece[2]
+    // let bottlePrice= price;
+    // let packPrice = bottlePrice*11;
+    // // let box = 950;
+    // let boxPrice = 24*packSize
+    // boxSize>=1 && pieceSize >=1 && packSize>=1 ?
+    //   priceList.push({piece:{name:"Bottle 1", quantity:pieceSize,bottlePrice},
+    //                   pack:{name:"11 pack", quantity:packSize,packPrice},
+    //                   box:{name:"Big box", quantity:boxSize,boxPrice}}):
+    //  pieceSize >=1 && packSize>=1 ?
+    //   priceList.push({piece:{name:"Bottle 1", quantity:pieceSize,bottlePrice},
+    //   pack:{name:"11 pack", quantity:packSize,packPrice},}):
+    //   pieceSize >=1  ?
+    //   priceList.push({piece:{name:"Bottle 1", quantity:pieceSize,bottlePrice}})
+    //   : alert("enter atleast piece")
+
+    //   // box:{name:"Big box", quantity:264,price}})     
+    //   this.makeJson(priceList)
+    //   console.log(n,price,piece)
+    // }
+    // calculate(10,40,[5,10,1])
+    // function makeJson(priceList){
+    // let parseddata = {PriceList:priceList};
+    // let myJson =  JSON.stringify(parseddata) ;
+    // console.log(myJson);}
+    
+
+    const  {name,email,user_number,selected_service,message}= this.state
+    e.preventDefault();
+
+    let newData = {
+      name,email,user_number,selected_service,message
+    }
+    this.props.quotationrequest(newData)
+    console.log(newData)
+    setTimeout(() => {
+     this.setState({
+      name: '',
+      email: '',
+      user_number: '',
+      selected_service: '',
+      message: '',
+     })
+    }, 100);
+    
+  }
   render() {
+    const  {name,email,user_number,selected_service,message}= this.state;
+
     return (
       <div className="homePage">
          <Header />
          <div className="homeBanner">
                         <img src="https://cdn.cosmicjs.com/77b3c3c0-52ca-11e6-a069-734be6eb1ef6-shutterstock_218199787.png" className="img-fluid" alt="admin@bootstrapmaster.com" />
                       <div className="bannerText">
-                        <div className="d-flex flex-column bd-highlight mb-3">
-                <h1>Brand design</h1>
-                <p >It’s not just about Ideas. It’s about making ideas happen.</p>
-                <h6>Logo , Stationary, Custom Graphic Designs &amp; Marketing Collaterals</h6>
+                        <div className="d-flex flex-column bd-highlight mb-3" >
+                {/* <h1 style={{color:'white'}}>Appointment</h1> */}
+                {/* <p >It’s not just about Ideas. It’s about making ideas happen.</p>
+                <h6>Logo , Stationary, Custom Graphic Designs &amp; Marketing Collaterals</h6> */}
+                <br/><br/><br/><br/><br/><br/><br/><br/>
                 <div  className="bannerbtn">
-                  <NavLink to="/contact">READ MORE</NavLink>
+                  <NavLink to="/appointments">Go To Appointments</NavLink>
                 </div>
                 </div>
               </div>
+       </div>
+       <div>
+         <Row>
+
+         </Row>
        </div>
        <div className="aboutSec">
         <Container>
@@ -113,41 +186,48 @@ class Home extends Component {
           <Col md="12">
                 <h4>REQUEST FOR Quotation</h4>
               </Col>
-              <Form>
+              <Form  >
               <Col md="12">
                   <div className="form-group">
-                    <Input className="effect-3" type="text" placeholder="Full Name" />
+                    <Input required onChange={this.onChange} value={name} name='name'
+                     className="effect-3" type="text" placeholder="Full Name" />
                   </div>
                 </Col>
                 <Col md="12">
                 <div className="form-group">
-                    <Input className="effect-3" type="text" placeholder="Your Email" />
+                    <Input type='email' onChange={this.onChange} value={email} name='email' required
+                     className="effect-3" type="text" placeholder="Your Email" />
                   </div>
                 </Col>
                 <Col md="12">
                 <div className="form-group">
-                  <Input className="effect-3" type="text" placeholder="Your Phone Number" />
+                  <Input type='number'
+                   onChange={this.onChange} value={user_number} name='user_number' required
+                    className="effect-3" type="text" placeholder="Your Phone Number" />
                  </div>
                 </Col>
                 <Col md="12">
                 <div className="form-group">
-                    <select className="effect-3">
-                      <option>Select a Service</option>
-                      <option>Select a Service</option>
-                      <option>Select a Service</option>
-                      <option>Select a Service</option>
+                    <select className="effect-3" required
+                     onChange={this.onChange} value={selected_service} name='selected_service'>
+                      <option>Select a service</option>
+                      <option>Eye Specialist</option>
+                      <option>ENT Specialist</option>
+                      <option>Heart Specialist</option>
+                      <option>General Physician</option>
                     </select>
                   </div>
                 </Col>
                 <Col md="12">
                 <div className="form-group">
-                    <textarea className="effect-3" placeholder="Message"></textarea>
+                    <textarea onChange={this.onChange} value={message} name='message'
+                     className="effect-3" placeholder="Message"></textarea>
                   </div>
                 </Col>
                  <div className="row justify-content-md-center">
                  <Col md="12">
                      <div className="conatctBtn bannerbtn">
-                      <NavLink to="#">SUBMIT</NavLink>
+                      <NavLink onClick={this.onSubmit} to="#">SUBMIT</NavLink>
                     </div>
                   </Col>
                 </div>
@@ -163,4 +243,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default connect(null,{quotationrequest})(Home);

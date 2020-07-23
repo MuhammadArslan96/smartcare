@@ -23,7 +23,7 @@ class Alerts extends Component {
           <Col xs="12" md="6">
             <Card>
               <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Alerts</strong>
+                <i className="fa fa-align-justify"></i><strong>Doctor</strong>
                 <div className="card-header-actions">
                   <a href="https://reactstrap.github.io/components/alerts/" rel="noreferrer noopener" target="_blank" className="card-header-action">
                     <small className="text-muted">docs</small>
@@ -61,8 +61,8 @@ class Alerts extends Component {
           <Col xs="12" md="6">
             <Card>
               <CardHeader>
-                <i className="fa fa-align-justify"></i><strong>Alerts</strong>
-                <small> use <code>.alert-link</code> to provide links</small>
+                <i className="fa fa-align-justify"></i><strong>End-User</strong>
+                {/* <small> use <code>.alert-link</code> to provide links</small> */}
               </CardHeader>
               <CardBody>
                 <Alert color="primary">

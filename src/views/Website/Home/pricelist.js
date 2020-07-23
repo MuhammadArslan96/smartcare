@@ -1,0 +1,5 @@
+let priceList =[];    function calculate(n,price,piece){    let pieceSize = piece[0];    let packSize = piece[1];    let boxSize = piece[2];    let bottlePrice= price;    let packPrice = bottlePrice*11;    let boxPrice = 24*packSize;
+        boxSize>=1 && pieceSize >=1 && packSize>=1 ?      priceList.push({piece:{name:"Bottle 1", quantity:pieceSize,bottlePrice},                      pack:{name:"11 pack", quantity:packSize,packPrice},                      box:{name:"Big box", quantity:boxSize,boxPrice}}):     pieceSize >=1 && packSize>=1 ?      priceList.push({piece:{name:"Bottle 1", quantity:pieceSize,bottlePrice},      pack:{name:"11 pack", quantity:packSize,packPrice},}):      pieceSize >=1  ?      priceList.push({piece:{name:"Bottle 1", quantity:pieceSize,bottlePrice}})      : alert("enter atleast piece")
+          let parseddata = {PriceList:priceList};
+          let myJson =  JSON.stringify(parseddata)                       console.log(n,price,piece)      console.log(myJson)    }
+        calculate(10,40,[5,10,1])

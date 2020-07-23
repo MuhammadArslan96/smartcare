@@ -484,8 +484,8 @@ class Dashboard extends Component {
   render() {
 
     return (
-        this.props.is_admin === false ?
-          <h1 className="animated fadeIn pt-1 text-center">Doctor Dashboard </h1>:
+        // this.props.is_admin === false ?
+        //   <h1 className="animated fadeIn pt-1 text-center">Doctor Dashboard </h1>:
       <div className="animated fadeIn">
         <Row>
           <Col xs="12" sm="6" lg="3">
@@ -642,7 +642,7 @@ class Dashboard extends Component {
           </Col>
         </Row>
 
-        <Row>
+        {/* <Row>
           <Col xs="6" sm="6" lg="3">
             <Suspense fallback={this.loading()}>
               <Widget03 dataBox={() => ({ variant: 'facebook', friends: '89k', feeds: '459' })} >
@@ -682,7 +682,7 @@ class Dashboard extends Component {
               </Widget03>
             </Suspense>
           </Col>
-        </Row>
+        </Row> */}
 
         <Row>
           <Col>
@@ -698,7 +698,7 @@ class Dashboard extends Component {
                         <div className="callout callout-info">
                           <small className="text-muted">New Clients</small>
                           <br />
-                          <strong className="h4">9,123</strong>
+                          <strong className="h4">123</strong>
                           <div className="chart-wrapper">
                             <Line data={makeSparkLineData(0, brandPrimary)} options={sparklineChartOpts} width={100} height={30} />
                           </div>

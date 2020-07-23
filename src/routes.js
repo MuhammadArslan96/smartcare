@@ -1,5 +1,7 @@
 import React from 'react';
 
+const AddDoctorData = React.lazy(() => import('./views/custom/add_doctor_data'));
+const Quotations = React.lazy(() => import('./views/custom/quotations'));
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
 const Carousels = React.lazy(() => import('./views/Base/Carousels'));
@@ -79,6 +81,9 @@ const routes = [
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/users', exact: true,  name: 'Users', component: Users },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
+  { path: '/adddoctordata', exact: true, name: 'Doctor Details', component: AddDoctorData },
+  { path: '/quotations', exact: true, name: 'Quotations', component: Quotations },
+  // { path: '/appointments', exact: true, name: 'Appointments', component: Appointments },
 ];
 
 export default routes;
