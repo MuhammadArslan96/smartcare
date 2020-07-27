@@ -28,10 +28,22 @@ export const getUsers = () => dispatch => {
       let filterd = arr.includes(childData.email)
       // if(filterd.length!==0){
       //   arr.push(filterd)
-      //   log(childData.email)
-      // } else{
-        log(filterd)
+        log(childData.emafirebaseil)
+      if(arr.length!==0){
+        arr && arr.forEach(item => {
+          log(item.id != childData.id)
+        if(item.id !== childData.id){
+          arr.push(childData)
+          log(arr)
+        }
+      })
+     } else{
+      log(arr)
         arr.push(childData)
+
+     }
+      // } else{
+        log(arr,childData)
 
       // }
 
@@ -60,13 +72,9 @@ export const approveDoctor = (user) => dispatch => {
       isDoctor:user.isDoctor,
       isApproved:true,
       id:user.id
-    }).then(res=> {
-      log(res,user.id)
-      // dispatch({
-        // USERS_LIST:
-      // })
     })
-    .catch(err=> log(err.message))
+    log(user)
+
     // userRef.on('value', snapshot => {
     //   log(snapshot.val())
     // })
@@ -84,7 +92,7 @@ export const getCurrentUser = () => dispatch => {
       var user = firebase.auth().currentUser;
       log(user)
       if(user !== null){
-        if(user.uid === 'HhtJEKBgjQg2rlswT5GlTC2OI1o2'){
+        if(user.uid === 'pkNEGXoUvUgufASmuW4yjyUwHor2'){
           dispatch({
             type:IS_ADMIN,
             payload:true

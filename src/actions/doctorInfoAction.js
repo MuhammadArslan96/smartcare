@@ -38,7 +38,7 @@ export const getAllDoctorInfo = (doc_info) => dispatch => {
       let data = snapshot.val() 
       for(let key in data){
         let str = key.toString()
-        let child = firebase.database().ref('users/' + str+  '/doctorInfo')
+        var child = firebase.database().ref('users/' + user?.uid).child('doctorInfo');
         log(child)
       child.on('value' , function(snapshot){
        let childdata = snapshot.val()

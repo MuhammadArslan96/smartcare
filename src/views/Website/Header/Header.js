@@ -55,7 +55,7 @@ class Header extends Component { // eslint-disable-line react/prefer-stateless-f
  <AppSidebarToggler display="xs" />
   <div className="collapse navbar-collapse custom-nav" id="navbarSupportedContent">
     <ul>
-                    <li><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/home">Home</NavLink></li>
                     <li><NavLink to="/appointments">Appointment</NavLink></li>
                     <li><Link to="/about">About Us</Link></li>
                     <li><NavLink to="/services">Services</NavLink></li>

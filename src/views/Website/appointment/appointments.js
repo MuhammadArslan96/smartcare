@@ -70,7 +70,7 @@ componentDidUpdate(prevProps, prevState) {
                             {/* )
                         })} */}
                     </td>
-                    <td>
+                    <td style={{cursor:'pointer'}} >
                       <Badge color="success">View</Badge>
                     </td>
                   </tr>
@@ -95,8 +95,8 @@ componentDidUpdate(prevProps, prevState) {
                             {/* )
                         })} */}
                     </td>
-                    <td>
-                      <Badge color="success">View</Badge>
+                    <td style={{cursor:'pointer'}} >
+                       <Badge color="success">View</Badge>
                     </td>
                   </tr>
                   <tr>
@@ -122,8 +122,8 @@ componentDidUpdate(prevProps, prevState) {
                             {/* )
                         })} */}
                     </td>
-                    <td>
-                      <Badge color="success">View</Badge>
+                    <td style={{cursor:'pointer'}} >
+                       <Badge color="success">View</Badge>
                     </td>
                   </tr>
                   <tr>
@@ -147,8 +147,8 @@ componentDidUpdate(prevProps, prevState) {
                             {/* )
                         })} */}
                     </td>
-                    <td>
-                      <Badge color="success">View</Badge>
+                    <td style={{cursor:'pointer'}} >
+                       <Badge color="success">View</Badge>
                     </td>
                   </tr>
                   
@@ -173,7 +173,7 @@ componentDidUpdate(prevProps, prevState) {
                             {/* )
                         })} */}
                     </td>
-                    <td>
+                    <td style={{cursor:'pointer'}} >
                       <Badge color="success">View</Badge>
                     </td>
                   </tr>

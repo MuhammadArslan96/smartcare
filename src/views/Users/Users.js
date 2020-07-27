@@ -4,6 +4,7 @@ import { Badge, Card, CardBody, CardHeader, Col, Row, Table,TabContent, TabPane,
 import {getUsers,approveDoctor} from '../../actions/userAction'
 import usersData from './UsersData'
 import {connect} from 'react-redux'
+import { ToastsStore } from 'react-toasts';
 
 function UserRow(props) {
   const users = props.users
@@ -127,8 +128,10 @@ class Users extends Component {
                         <td>  {item.name} </td>
                         <td>  {item.email} </td>
                         <td>  {item.isDoctor===true ? 'Doctor' : 'End-user'} </td>
-                        <td  > <Badge color={item.isApproved === true?'success':'warning'}> {item.isApproved?'Approved' : 'Pending'} </Badge></td>
-                        <td onClick={() => item.isApproved ===false ? this.props.approveDoctor(item) : void 0 } > <Badge color='danger'> Approve </Badge></td>
+                        <td  > <Badge color={item.isApproved === true?'success':'warning'}> 
+                        {item.isApproved?'Approved' : 'Pending'} </Badge></td>
+                        <td style={item.isApproved ===false ?{cursor:'pointer'}: void 0} onClick={() => item.isApproved ===false ?
+                           this.props.approveDoctor(item) : void 0 } > <Badge color='danger'> Approve </Badge></td>
                       </tr>
                       : void 0
                       )
@@ -186,6 +189,7 @@ class Users extends Component {
   }
   componentDidMount() {
     this.props.getUsers()
+    // ToastsStore.success("get al users")
   }
 
   render() {

@@ -15,19 +15,20 @@ class Register extends Component {
       repeat_password:'',
       isDoctor:false,
       loading:false,
+      isMedical:false
     }
   }
   onChange= e => this.setState({[e.target.name] : e.target.value})
   onSubmit=e=> {
     e.preventDefault();
-    const {name,password,email,repeat_password,isDoctor} = this.state
+    const {name,password,email,repeat_password,isDoctor,isMedical} = this.state
     if(password !== repeat_password){
       ToastsStore.error("Repeat password is incorrect")
       return false
     }else{
       try{
     let newUser = {
-      name,password,email,repeat_password,isDoctor
+      name,password,email,repeat_password,isDoctor,
     }
     this.props.registerUser(newUser,this.props.history)
   }
@@ -46,7 +47,7 @@ class Register extends Component {
     }
   }
   render() {
-    const {name,password,email,repeat_password,isDoctor,loading} = this.state
+    const {name,password,email,repeat_password,isDoctor,loading,isMedical} = this.state
     return (
       this.state.loading === true ? <div className="animated fadeIn pt-1 text-center">Loading...</div> : 
       <div className="app flex-row align-items-center">
@@ -90,8 +91,14 @@ class Register extends Component {
                     </InputGroup>
                     <FormGroup check disabled style={{marginBottom:'1vw'}} >
                       <Label check style={{cursor:'pointer'}} >
-                        <Input type="checkbox" name="isDoctor" onChange={() => this.setState({isDoctor:!isDoctor})}  value={isDoctor} />{' '}
+                        <Input type="radio" name="isDoctor" 
+                        onChange={() => this.setState({isDoctor:!isDoctor,isMedical:false})}  value={isDoctor} />{' '}
                        Register as Doctor
+                      </Label>
+                      <Label check style={{cursor:'pointer',marginLeft:'4vw'}} >
+                        <Input type="radio" name="isDoctor" 
+                         onChange={() => this.setState({isMedical:!isMedical,isDoctor:false})}  value={isMedical} />{' '}
+                       Register as Medical Store
                       </Label>
                     </FormGroup>
                     <Button color="success" type='submit' block>Create Account</Button>

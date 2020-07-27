@@ -96,7 +96,7 @@ export const loginUser = (userData,history) => dispatch => {
       // snapshot.forEach(function(childSnapshot) {
         var childData = snapshot.val();
         log(childData)
-          if(childData?.isDoctor === true || res.user.uid === 'HhtJEKBgjQg2rlswT5GlTC2OI1o2'){
+          if(childData?.isDoctor === true || childData?.email === 'admin@gmail.com'){
             // alert('hello')
               history.push('/dashboard/')
           }  
