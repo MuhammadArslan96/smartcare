@@ -23,6 +23,7 @@ import navigation from '../../_nav';
 import doctor_navigation from '../../doctor_nav';
 // routes config
 import routes from '../../routes';
+import { ToastsStore } from 'react-toasts';
 // import { connect } from 'http2';
 
 const DefaultAside = React.lazy(() => import('./DefaultAside'));
@@ -30,18 +31,31 @@ const DefaultFooter = React.lazy(() => import('./DefaultFooter'));
 const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
 
 const log = console.log
+let user=localStorage.getItem('user');
+
 class DefaultLayout extends Component {
 
   state = {
-    isUser : undefined
+    isUser : undefined,
+    is_admin:undefined,
   }
 
   componentDidMount() {
+    // ToastsStore.warning('layout')
+    //  user = localStorage.getItem('user');
+    log(user);
+    this.setState({is_admin:user})
     this.props.getCurrentUser();
     this.props.getUsers()
 
     
   }
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   if(this.props.is_admin!==prevProps.is_admin){
+  //     // this.setState({is_admin:this.props.is_admin})
+  //   }
+  // }
 
   loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
 
@@ -51,7 +65,8 @@ class DefaultLayout extends Component {
   }
 
   render() {
-    // log(this.state.isUser)
+    // user = !localStorage.getItem('user') && undefined
+    log(this.state.is_admin)
     return (
       <div className="app">
         <AppHeader fixed>
@@ -81,8 +96,9 @@ class DefaultLayout extends Component {
                   {
                   // this.props.loading === false ? "Loading..." :
                   routes.map((route, idx) => {
-                    log(route,!this.props.currentUser?.name)
-                    return (  this.props?.is_admin === true ||
+                    log(route,this.props.currentUser,this.state.is_admin,user,'91')
+                    return ( !user? 
+                      <Redirect to='/' /> : this.props?.is_admin === true ||
                       this.props.currentUser?.isApproved === true ?
                        <Route
                         key={idx}
@@ -97,7 +113,7 @@ class DefaultLayout extends Component {
                           "Not Approved" : void 0 }  </p>
                     ) 
                   })}
-                  <Redirect from="/" to="/home" />
+                  {/* <Redirect from="/" to="/home" /> */}
                 </Switch>
               </Suspense>
             </Container>
@@ -119,7 +135,7 @@ class DefaultLayout extends Component {
 }
 
 const mapStateToProps = state => {
-  log(state.users)
+  log(state.users,'current user')
   return {
     currentUser : state.users.currentUser,
     is_admin : state.users.is_admin,

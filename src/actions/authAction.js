@@ -9,6 +9,7 @@ import {
   LOG_OUT,
   SOCIAL
 } from "./type";
+import { Redirect } from "react-router-dom";
 // Register User
 let log = console.log
 export const registerUser = (userData, history) => dispatch => {
@@ -21,7 +22,7 @@ export const registerUser = (userData, history) => dispatch => {
     var ciphertext = CryptoJS.AES.encrypt(res.user.uid, 'firebase uid key').toString();
     log(res.user.uid,ciphertext)
    let user = firebase.database       
-   localStorage.setItem('uid',ciphertext)
+   localStorage.setItem('user',res?.user?.email)
 
   //  user.updateProfile({
   //   displayName: userData.isDoctor===true ? 'doctor' : 'anotheruser'  ,
@@ -53,7 +54,7 @@ export const registerUser = (userData, history) => dispatch => {
       if(userData.isDoctor===true){
         history.push('/dashboard')
       }else{
-      history.push('/home')
+      history.push('/')
       }
      })
      .catch(err => console.log(err.message))
@@ -83,7 +84,7 @@ export const loginUser = (userData,history) => dispatch => {
      var ciphertext = CryptoJS.AES.encrypt(res.user.uid, 'firebase uid key').toString();
      log(res.user.uid,ciphertext)
     let user = firebase.database       
-    // localStorage.setItem('uid',ciphertext)toasts
+    localStorage.setItem('user',res?.user?.email)
   
     dispatch({
       type: LOGIN_USER,
@@ -102,7 +103,7 @@ export const loginUser = (userData,history) => dispatch => {
           }  
           else{
             // alert('helo')
-            history.push('/home/')
+            history.push('/')
           }
        
       // });
@@ -129,14 +130,16 @@ export const loginUser = (userData,history) => dispatch => {
 export const logout = (history) => dispatch => {
   firebase.auth().signOut().then(function(res) {
     // Sign-out successful.
-    // ToastsStore.error(error.message)
+    ToastsStore.success('Logout')
+    localStorage.removeItem('user')
     dispatch({
       type: LOG_OUT,
       payload: res
     })
     localStorage.removeItem('uid')
-    console.log('succes logout')
+    console.log('succes logout',history)
     // history.push('/login')
+    
   }).catch(function(error) {
     // ToastsStore.error(`error due to ${error.message}`)
     dispatch({
@@ -158,7 +161,7 @@ export const loginWithFb = (history) => dispatch => {
     var user = result.user;
     log(token,user,history)
     ToastsStore.success("Succesfully Signin with Facebook")
-    history.push('/home')
+    history.push('/')
     dispatch({
       type:SOCIAL,
       payload:user,
@@ -197,7 +200,7 @@ export const loginWithGmail = (history) => dispatch => {
     var user = result.user;
     log(token,user)
     ToastsStore.success("Succesfully Signin with Gmail")
-    history.push('/home')
+    history.push('/')
 
     dispatch({
       type:SOCIAL,

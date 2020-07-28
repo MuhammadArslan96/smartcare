@@ -128,9 +128,10 @@ class Users extends Component {
                         <td>  {item.name} </td>
                         <td>  {item.email} </td>
                         <td>  {item.isDoctor===true ? 'Doctor' : 'End-user'} </td>
-                        <td  > <Badge color={item.isApproved === true?'success':'warning'}> 
-                        {item.isApproved?'Approved' : 'Pending'} </Badge></td>
-                        <td style={item.isApproved ===false ?{cursor:'pointer'}: void 0} onClick={() => item.isApproved ===false ?
+                        <td  > <Badge color={item.isApproved === true || this.props.is_approved === true?'success':'warning'}> 
+                        {item.isApproved || this.props.is_approved === true ?'Approved' : 'Pending'} </Badge></td>
+                        <td style={item.isApproved ===false && this.props.is_approved !== true ?{cursor:'pointer'}: void 0}
+                         onClick={() => item.isApproved ===false && this.props.is_approved !== true  ?
                            this.props.approveDoctor(item) : void 0 } > <Badge color='danger'> Approve </Badge></td>
                       </tr>
                       : void 0
@@ -152,37 +153,13 @@ class Users extends Component {
                 <i className="fa fa-align-justify"></i> Users <small className="text-muted">example</small>
               </CardHeader> */}
               <CardBody>
-                <Table responsive hover>
-                  <thead>
-                    <tr>
-                      <th scope="col">id</th>
-                      <th scope="col">name</th>
-                      <th scope="col">email</th>
-                      <th scope="col">registered</th>
-                      <th scope="col">role</th>
-                      {/* <th scope="col">Action</th> */}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {this.props.users?.user.length!==0 && this.props.users?.user.map((item,index) => {
-                      return (
-                        <tr key={index} >
-                        <td> <Link to={`/users/${item.email}`} > {index} </Link>  </td>
-                        <td>  {item.name} </td>
-                        <td>  {item.email} </td>
-                        <td>  {item.email} </td>
-                        <td>  {item.isDoctor===true ? 'Doctor' : 'End-user'} </td>
-                        {/* <td onClick={() => this.props.approveDoctor()} > <Badge color='danger'> Delete User </Badge></td> */}
-                      </tr>
-                      )
-                    })}
-                  
-                  </tbody>
-                </Table>
+                <p>No data Found</p>
               </CardBody>
+           
             </Card>
           </Col>
         </Row>
+      
                </TabPane>
       </>
     );
@@ -225,7 +202,7 @@ class Users extends Component {
                   active={this.state.activeTab[0] === '3'}
                   onClick={() => { this.toggle(0, '3'); }}
                 >
-                  Others
+                  Medical Store
                 </NavLink>
               </NavItem>
             </Nav>
@@ -243,7 +220,8 @@ class Users extends Component {
 const mapStateToProps = state => {
   log(state.users)
   return {
-    users : state.users
+    users : state.users,
+    is_approved : state.users.is_approved
   }
 }
 export default connect(mapStateToProps,{getUsers,approveDoctor})(Users);

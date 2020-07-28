@@ -16,7 +16,7 @@ class DefaultFooter extends Component {
     return (
       <React.Fragment>
         <span>Admin Panel &copy; 2020</span>
-        <span className="ml-auto">Powered by React JS</span>
+        <span className="ml-auto">Powered by Smart Care</span>
       </React.Fragment>
     );
   }

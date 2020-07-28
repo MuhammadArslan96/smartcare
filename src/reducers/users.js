@@ -12,6 +12,7 @@ import {
     loading: true,
     currentUser:undefined,
     is_admin: false,
+    is_approved:false
   };
   export default function(state = initialState, action) {
     switch (action.type) {
@@ -23,6 +24,7 @@ import {
           loading:false,
         };
         case CURRENT_USER:
+          console.log('reducer',action.payload)
           return {
             ...state,
             isAuthenticated: true,
@@ -31,10 +33,19 @@ import {
             is_admin:false,
           };
         case IS_ADMIN:
+          console.log('reducer',action.payload)
           return {
             ...state,
             isAuthenticated: true,
             is_admin: action.payload,
+            loading:false,
+          };
+        case 'APPROVED':
+          console.log('reducer',action.payload)
+          return {
+            ...state,
+            isAuthenticated: true,
+            is_approved:action.payload,
             loading:false,
           };
     

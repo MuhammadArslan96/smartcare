@@ -83,8 +83,8 @@ class Home extends Component {
                 {/* <p >It’s not just about Ideas. It’s about making ideas happen.</p>
                 <h6>Logo , Stationary, Custom Graphic Designs &amp; Marketing Collaterals</h6> */}
                 <br/><br/><br/><br/><br/><br/><br/><br/>
-                <div  className="bannerbtn">
-                  <NavLink to="/appointments">Go To Appointments</NavLink>
+                <div  className="bannerbtn"  >
+                  <NavLink style={{backgroundColor:'#C48DC2'}} to="/appointments">Go To Appointments</NavLink>
                 </div>
                 </div>
               </div>
@@ -130,21 +130,21 @@ class Home extends Component {
         <Col md="4">
         <div className="portfolioBox">
               <img src="../../assets/img/high-customizable.png" className="img-responsive" alt="Portfolio Brand" />
-              <h4>Highly Customizable</h4>
+              <h4>Find Nearest Doctor</h4>
               <p>Nulla varius consequat magna, id molestie ipsum volutpat quis. A true story, that never been told!.</p>
             </div>
           </Col>
           <Col md="4">
           <div className="portfolioBox">
               <img src="../../assets/img/clean-code.png" className="img-responsive wow fadeInDown" data-wow-delay="0.2s" alt="Portfolio Brand" />
-              <h4>Clean Code</h4>
+              <h4>Find Nearest Medical Store</h4>
               <p>Nulla varius consequat magna, id molestie ipsum volutpat quis. A true story, that never been told!.</p>
             </div>
           </Col>
           <Col md="4">
           <div className="portfolioBox">
               <img src="../../assets/img/fast-performance.png" className="img-responsive wow fadeInDown" data-wow-delay="0.2s" alt="Portfolio Brand" />
-              <h4>Fast Performance</h4>
+              <h4>E-Appointment</h4>
               <p>Nulla varius consequat magna, id molestie ipsum volutpat quis. A true story, that never been told!.</p>
             </div>
           </Col>
@@ -176,9 +176,9 @@ class Home extends Component {
               <h4>Contact Us</h4>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna tincidunt, auctor ullamcorper.</p>
               <h5>Call Us</h5>
-              <NavLink to="tel:123-456-7890">123-456-7890</NavLink>
+              <NavLink to="tel:123-456-7890">0307-0084689</NavLink>
               <h6>Mail Us Email</h6>
-              <NavLink to="mailto:mail@example.com">mail@example.com</NavLink>
+              <NavLink to="mailto:mail@example.com">appscorrer@gmail.com</NavLink>
             </div>
       </Col>
           <Col md="6" xs="12">

@@ -13,6 +13,7 @@ const initialState = {
   loading: true,
   error:undefined,
   is_user:false,
+  logout:false,
 };
 export default function(state = initialState, action) {
   switch (action.type) {
@@ -43,7 +44,7 @@ export default function(state = initialState, action) {
       ...state,
       loading: false,
       isAuthenticated: false,
-      // is_user
+      logout:true,
       // error: action.payload
     };
     case SOCIAL:

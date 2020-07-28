@@ -35,7 +35,7 @@ class App extends Component {
             store={ToastsStore}
           />
             <Switch>
-              <Route exact path="/home" name="Home Page" render={props => <Home {...props}/>} /> 
+              <Route exact path="/" name="Home Page" render={props => <Home {...props}/>} /> 
               <Route exact path="/about" name="About Page" render={props => <About {...props}/>} /> 
               <Route exact path="/services" name="Services Page" render={props => <Services {...props}/>} /> 
               <Route exact path="/blog" name="Blog Page" render={props => <Blog {...props}/>} /> 

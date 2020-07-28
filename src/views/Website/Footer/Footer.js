@@ -32,13 +32,13 @@ class Footer extends Component { // eslint-disable-line react/prefer-stateless-f
               <h5> DISCOVER</h5>
               <ul>
                 <li><NavLink to="/">Home</NavLink></li>
-                <li><NavLink to="/">Services</NavLink></li>
+                <li><NavLink to="/about">About Us</NavLink></li>
                 <li><NavLink to="/">Request for Quotation</NavLink></li>
-                <li><NavLink to="/">Blog</NavLink></li>
+                {/* <li><NavLink to="/">Blog</NavLink></li> */}
               </ul>
             </div>
           </Col>
-          <Col md="2">
+          {/* <Col md="2">
             <div className="footerlinks">
               <h5> FEATURES</h5>
               <ul>
@@ -49,7 +49,7 @@ class Footer extends Component { // eslint-disable-line react/prefer-stateless-f
                 <li><NavLink to="/">CRM</NavLink></li>
               </ul>
             </div>
-          </Col>
+          </Col> */}
           <Col md="3">
             <div className="footerlinks">
               <h5>SUPPORT</h5>

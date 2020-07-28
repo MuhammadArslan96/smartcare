@@ -33,25 +33,33 @@ export const getAllDoctorInfo = (doc_info) => dispatch => {
   let user = firebase.auth().currentUser;
   var ref = firebase.database().ref('users/')
   log(user)
-  ref.on('value' , function(snapshot){
+  ref.once('value' , function(snapshot){  
     // snapshot.forEach(values=>{
       let data = snapshot.val() 
       for(let key in data){
         let str = key.toString()
-        var child = firebase.database().ref('users/' + user?.uid).child('doctorInfo');
+        var child = firebase.database().ref('users/' + key ).child('doctorInfo');
         log(child)
-      child.on('value' , function(snapshot){
+      child.once('value' , function(snapshot){
        let childdata = snapshot.val()
-        log(key,childdata,user,child)
+        log(key,childdata,user,snapshot.val(),arr)
+        if(childdata?.Specialization){
+
+          arr.push(childdata)
+         setTimeout(() => {
+          dispatch({
+            type:"DOCTOR_INFO",
+            payload: arr
+        })
+         }, 1000);
+        }
       })
       }
     //   arr.push(data)
-      log(data)
+      log(data,arr)
+    
     // })
-    dispatch({
-      type:"DOCTOR_INFO",
-      payload: arr
-  })
+   
   })
 
 }

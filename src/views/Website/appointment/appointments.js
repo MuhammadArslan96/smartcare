@@ -9,7 +9,8 @@ class Appointments extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            data:undefined
+            data:[],
+            currentDoctor:undefined,
          }
     }
 
@@ -21,10 +22,17 @@ componentDidUpdate(prevProps, prevState) {
         this.setState({data:this.props.doctorInfo})
     }
 }
+
+handleView=(item,index)=>{
+    this.setState({
+        currentDoctor:item
+    })
+}
     render() { 
         const {data} = this.state;
-        console.log(data)
-        return ( 
+        console.log(this.props.doctorInfo,this.state)      
+
+        return !this.props.doctorInfo ? <p>loding</p> : ( 
             <div>
                 <Header/>
                 <div style={{padding:'3vw 3vw'}} >
@@ -48,146 +56,53 @@ componentDidUpdate(prevProps, prevState) {
                   <tbody>
                 {/* {data&& data.map(item => {
                     return ( */}
-                        
-                  <tr>
-                    <td>Dr,Alvis Peter</td>
-                    <td>4</td>
-                    <td>Cardiac</td>
-                    <td>
-                        {/* {item.map(child => {
-                            return ( */}
-                           <tr>
-                               <th>Friday</th>
-                               <th>Saturday</th>
-                               <th>Sunday</th>
-                           </tr>
-                           <tr>
-                               <td style={{margin:'100px'}} >12pm-2pm</td>
-                               <td>6pm-8pm</td>
-                               <td>4pm-5pm</td>
-                           </tr>
+                {this.props.doctorInfo&&this.props.doctorInfo.map((item,index) => {
+                    console.log(item)
+                    return (                    
+                        <tr key={item.Specialization}>
+                            {console.log(item)}
+                        <td>Dr,Alvis Peter</td>
+                        <td>{item?.experience} </td>
+                        <td>{item?.Specialization}</td>
 
-                            {/* )
-                        })} */}
-                    </td>
-                    <td style={{cursor:'pointer'}} >
-                      <Badge color="success">View</Badge>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Dr,Ali Hassan</td>
-                    <td>7</td>
-                    <td>Child Specialist</td>
-                    <td>
-                        {/* {item.map(child => {
-                            return ( */}
-                           <tr>
-                               {/* <th>Friday</th> */}
-                               {/* <th>Saturday</th> */}
-                               <th>Sunday</th>
-                           </tr>
-                           <tr>
-                               {/* <td style={{margin:'100px'}} >12pm-2pm</td> */}
-                               {/* <td>6pm-8pm</td> */}
-                               <td>7pm-12am</td>
-                           </tr>
-
-                            {/* )
-                        })} */}
-                    </td>
-                    <td style={{cursor:'pointer'}} >
-                       <Badge color="success">View</Badge>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Dr,Farooq</td>
-                    <td>11</td>
-                    <td>Pathologist</td>
-                    <td>
-                        {/* {item.map(child => {
-                            return ( */}
-                           <tr>
-                               <th>Friday</th>
-                               <th>Saturday</th>
-                               <th>Sunday</th>
-                               <th>Monday</th>
-                           </tr>
-                           <tr>
-                               <td  >12pm-2pm</td>
-                               <td>6pm-8pm</td>
-                               <td>4pm-5pm</td>
-                               <td>8pm-10pm</td>
-                           </tr>
-
-                            {/* )
-                        })} */}
-                    </td>
-                    <td style={{cursor:'pointer'}} >
-                       <Badge color="success">View</Badge>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Dr,Raveen</td>
-                    <td>3</td>
-                    <td>Heart Patient</td>
-                    <td>
-                        {/* {item.map(child => {
-                            return ( */}
-                           <tr>
-                               <th>Tuesday</th>
-                               <th>Friday</th>
-                               {/* <th>Sunday</th> */}
-                           </tr>
-                           <tr>
-                               {/* <td >12pm-2pm</td> */}
-                               <td>6pm-8pm</td>
-                               <td>4pm-5pm</td>
-                           </tr>
-
-                            {/* )
-                        })} */}
-                    </td>
-                    <td style={{cursor:'pointer'}} >
-                       <Badge color="success">View</Badge>
-                    </td>
-                  </tr>
-                  
-                  <tr>
-                    <td>Dr,Parvaiz</td>
-                    <td>10</td>
-                    <td>ENT</td>
-                    <td>
-                        {/* {item.map(child => {
-                            return ( */}
-                           <tr>
-                               <th>Wednesay</th>
-                               <th>Friday</th>
-                               <th>Sunday</th>
-                           </tr>
-                           <tr>
-                               <td >1pm-2pm</td>
-                               <td>3pm-5pm</td>
-                               <td>10am-11am</td>
-                           </tr>
-
-                            {/* )
-                        })} */}
-                    </td>
-                    <td style={{cursor:'pointer'}} >
-                      <Badge color="success">View</Badge>
-                    </td>
-                  </tr>
-                  
-                  {/* )
-                })} */}
+                        <td>
+                        {item.schedule?.map((sch_item,sch_index) => {
+                            return (
+                                <div>
+                               <tr>
+                                   <th> {sch_item.selectDay} </th>
+                                   {/* <th>Saturday</th>
+                                   <th>Sunday</th> */}
+                               </tr>
+                               <tr>
+                                   <td style={{margin:'100px'}} >
+                                       {sch_item.timeFrom}{sch_item.apmFrom}-{sch_item.timeTo}{sch_item.apmTo}
+                                       </td>
+                                  
+                               </tr>
+                            </div>
+                               
+                            )
+                        })}
+                        </td>
+                        <td style={{cursor:'pointer'}} onClick={() => this.handleView(item,index)} >
+                          <Badge color="success">View</Badge>
+                        </td>
+                      </tr>
+                           
+                        )
+                })}
+                
+                 
                  </tbody>
                 </Table>
-               
+               {/* {console.log(this.state.currentDoctor)} */}
               </CardBody>
             </Card>
                      </Col>
-                        <Col xs='12' lg='4' md='4'>
-                         <div style={{backgroundColor:'white',borderRadius:'10px',padding:'1vw'}} >
+                        <Col  xs='12' lg='4' md='4'>
+                         <div style={ !this.state.currentDoctor ? {display:'none'} :
+                          {backgroundColor:'white',borderRadius:'10px',padding:'1vw'}} >
                             <Row>
                                 <Col >
                                   <img src={require("./images/doctor.png")} width='90' />
@@ -207,16 +122,25 @@ componentDidUpdate(prevProps, prevState) {
                                    </textarea>
 
                                    <div style={{marginTop:'3vw'}} >
+                                       {console.log(this.state.currentDoctor)}
+                                               
                                             <ul  >
+                                       {this.state.currentDoctor&&
+                                       this.state.currentDoctor?.schedule.map((item,index) => {
+                                           return (
                                                 <li style={{backgroundColor:'#C48DC2',borderRadius:'10px',
                                                 color:'white', padding:'0.3vw 0.5vw', marginRight:'2vw',display:'inline-block'}} >
-                                                    12pm-2pm</li>
-                                                <li style={{backgroundColor:'#C48DC2',borderRadius:'10px',display:'inline-block',
-                                                color:'white', padding:'0.3vw 0.5vw', marginRight:'2vw'}} >6pm-8pm</li>
-                                                <li style={{backgroundColor:'#C48DC2',borderRadius:'10px',display:'inline-block',
-                                                color:'white', padding:'0.3vw 0.5vw', marginRight:'2vw'}} >4pm-5pm</li>
+                                                    {item.timeFrom}{item.apmFrom}-{item.timeTo}{item.apmTo}
+                                                    </li>
+                                                // <li style={{backgroundColor:'#C48DC2',borderRadius:'10px',display:'inline-block',
+                                                // color:'white', padding:'0.3vw 0.5vw', marginRight:'2vw'}} >6pm-8pm</li>
+                                                // <li style={{backgroundColor:'#C48DC2',borderRadius:'10px',display:'inline-block',
+                                                // color:'white', padding:'0.3vw 0.5vw', marginRight:'2vw'}} >4pm-5pm</li>
                                                 
+                                                )
+                                             })}
                                             </ul>
+                                            
                                    </div>
 
                                    <div style={{marginTop:'3vw',width:'100%'}}>

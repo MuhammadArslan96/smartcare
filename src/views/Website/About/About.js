@@ -54,21 +54,21 @@ class About extends Component {
         <Col md="4">
         <div className="portfolioBox">
               <img src="../../assets/img/high-customizable.png" class="img-responsive" alt="Portfolio Brand" />
-              <h4>Highly Customizable</h4>
+              <h4>E-Appointment</h4>
               <p>Nulla varius consequat magna, id molestie ipsum volutpat quis. A true story, that never been told!.</p>
             </div>
           </Col>
           <Col md="4">
           <div className="portfolioBox">
               <img src="../../assets/img/clean-code.png" class="img-responsive wow fadeInDown" data-wow-delay="0.2s" alt="Portfolio Brand" />
-              <h4>Clean Code</h4>
+              <h4>Find Nearest Doctor</h4>
               <p>Nulla varius consequat magna, id molestie ipsum volutpat quis. A true story, that never been told!.</p>
             </div>
           </Col>
           <Col md="4">
           <div className="portfolioBox">
               <img src="../../assets/img/fast-performance.png" class="img-responsive wow fadeInDown" data-wow-delay="0.2s" alt="Portfolio Brand" />
-              <h4>Fast Performance</h4>
+              <h4>Find Nearest Medical Store</h4>
               <p>Nulla varius consequat magna, id molestie ipsum volutpat quis. A true story, that never been told!.</p>
             </div>
           </Col>

@@ -22,26 +22,15 @@ export const getUsers = () => dispatch => {
   let arr = []
   try{
   var ref = firebase.database().ref("users");
-  ref.on('value', function(snapshot) {
+  ref.once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var childData = childSnapshot.val();
       let filterd = arr.includes(childData.email)
       // if(filterd.length!==0){
       //   arr.push(filterd)
         log(childData.emafirebaseil)
-      if(arr.length!==0){
-        arr && arr.forEach(item => {
-          log(item.id != childData.id)
-        if(item.id !== childData.id){
-          arr.push(childData)
-          log(arr)
-        }
-      })
-     } else{
-      log(arr)
         arr.push(childData)
-
-     }
+     
       // } else{
         log(arr,childData)
 
@@ -73,8 +62,13 @@ export const approveDoctor = (user) => dispatch => {
       isApproved:true,
       id:user.id
     })
-    log(user)
 
+    ToastsStore.success(`${user.name} approved as a doctor`)
+    log(user)
+    dispatch({
+      type:'APPROVED',
+      payload:true
+    })
     // userRef.on('value', snapshot => {
     //   log(snapshot.val())
     // })
@@ -86,18 +80,22 @@ catch(e){
 }
 
 export const getCurrentUser = () => dispatch => {
-  let arr = []
+  // ToastsStore.success("get user sy")
+  // let arr = []
   try{
     firebase.auth().onAuthStateChanged( (res) => {
       var user = firebase.auth().currentUser;
-      log(user)
+      log(user,'is bahir')
       if(user !== null){
-        if(user.uid === 'pkNEGXoUvUgufASmuW4yjyUwHor2'){
+        if(user.email === "admin@gmail.com"){
+          // this.props
+        log(user,'isadmin')
           dispatch({
             type:IS_ADMIN,
             payload:true
           })
         }else{
+        log(user,'isadmin')
         let userRef = firebase.database().ref('users/' + user.uid)
         userRef.on('value', snapshot => {
           let data = snapshot.val()
@@ -124,7 +122,7 @@ catch(e){
 export const quotationrequest = (data) => dispatch => {
  const quotations = firebase.database().ref("quotations/");
  quotations.push({...data})
- 
+ ToastsStore.success("Your Quotation Request Submitted")
   // const message = firebase.messaging()
   // message.requestPermission()
   // .then((res) => {return message.getToken()} )

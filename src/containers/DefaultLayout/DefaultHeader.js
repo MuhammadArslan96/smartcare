@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Redirect } from 'react-router-dom';
 import { Badge, UncontrolledDropdown, DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem } from 'reactstrap';
 import PropTypes from 'prop-types';
 import firebase from '../../config/index'
-
+import {logout} from '../../actions/authAction'
 import { AppAsideToggler, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
 import logo from '../../assets/img/brand/logo.png'
 import doctor from '../../assets/img/brand/doctor.png'
 import { connect } from 'react-redux';
+import { ToastsStore } from 'react-toasts';
 
 const propTypes = {
   children: PropTypes.node,
@@ -18,17 +19,24 @@ const log = console.log
 class DefaultHeader extends Component {
       state= {
         isDoctor:false,
-        currentUser:undefined
+        currentUser:undefined,
+        logout:false,
       }
 
   componentDidUpdate(prevProps, prevState) {
     if(this.props.currentUser !== prevProps.currentUser){
       this.setState({})
-    }
+    } 
   }
-
+  handlelogout=()=>{
+    this.props.logout();
+    this.setState({logout:true})
+  }
   render() {
-
+    if(this.state.logout === true){
+      // ToastsStore.warning('logout true')
+      return (<Redirect to='/' />)
+    }
     // eslint-disable-next-line
     const { children, ...attributes } = this.props;
     log(this.props.currentUser)
@@ -73,7 +81,7 @@ class DefaultHeader extends Component {
               {/* <DropdownItem><i className="fa fa-file"></i> Projects<Badge color="primary">42</Badge></DropdownItem> */}
               <DropdownItem divider />
               {/* <DropdownItem><i className="fa fa-shield"></i> Lock Account</DropdownItem> */}
-              <DropdownItem onClick={e => this.props.onLogout(e)}><i className="fa fa-lock"></i> Logout</DropdownItem>
+              <DropdownItem onClick={e => this.handlelogout()}><i className="fa fa-lock"></i> Logout</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
          
@@ -101,7 +109,7 @@ class DefaultHeader extends Component {
               {/* <DropdownItem><i className="fa fa-file"></i> Projects<Badge color="primary">42</Badge></DropdownItem> */}
               <DropdownItem divider />
               <DropdownItem><i className="fa fa-shield"></i> Lock Account</DropdownItem>
-              <DropdownItem onClick={e => this.props.onLogout(e)}><i className="fa fa-lock"></i> Logout</DropdownItem>
+              <DropdownItem onClick={e => this.handlelogout()}><i className="fa fa-lock"></i> Logout</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
         </Nav>
@@ -115,11 +123,12 @@ class DefaultHeader extends Component {
 DefaultHeader.propTypes = propTypes;
 DefaultHeader.defaultProps = defaultProps;
 const mapStateToProps = state => {
-  log(state.users.is_admin)
+  log(state.auth)
   return {
     currentUser : state.users.currentUser,
-    is_admin : state.users.is_admin
+    is_admin : state.users.is_admin,
+    islogout: state.auth.logout
   }
 }
 
-export default connect(mapStateToProps)(DefaultHeader);
+export default connect(mapStateToProps,{logout})(DefaultHeader);
