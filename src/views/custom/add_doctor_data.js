@@ -1,31 +1,22 @@
 import React,{Component} from 'react';
 import { 
-    Badge,
     Button,
     Card,
     CardBody,
     CardFooter,
     CardHeader,
-    Col,
-    Collapse,
-    DropdownItem,
-    DropdownMenu,
-    DropdownToggle,
-    Fade,
+    Col,  
     Form,
     FormGroup,
     FormText,
     FormFeedback,
-    Input,
-    InputGroup,
-    InputGroupAddon,
-    InputGroupButtonDropdown,
-    InputGroupText,
+    Input,   
     Label,
-    Row,Pagination, PaginationItem, PaginationLink,Table } from 'reactstrap';
+    Row,Table } from 'reactstrap';
 import { connect } from 'react-redux';
 import {addDoctorInfo,getDoctorInfo} from '../../actions/doctorInfoAction'
 import { ToastsStore } from 'react-toasts';
+import MedicalStore from './medicalStore'
 // import { filter } from 'core-js/fn/array';
 
 const log = console.log
@@ -136,11 +127,12 @@ deleteSchedule=()=>{
                 timeFrom:'', timeTo:'', apmFrom:'', apmTo:'',selectDay:''})
 }
     render() { 
-        log(this.state)
+        log(this.props)
         const {timeFrom, timeTo, apmFrom, apmTo,selectDay,savedSchedule,Specialization,address, experience, description,gender,} = this.state
         let propsie = this.props.doctor_info
         return ( 
             <div className="animated fadeIn">
+                {this.props.currentUser?.isMedical == true ? <MedicalStore/>:
                 <Row>
                     <Col xs="12" md="6">
                 <Card>
@@ -368,8 +360,8 @@ deleteSchedule=()=>{
                     </Card>
                 </Col>
 
-                </Row>
-             </div>
+                </Row>             
+                }</div>
          );
     }
 }

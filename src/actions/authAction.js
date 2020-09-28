@@ -41,6 +41,7 @@ export const registerUser = (userData, history) => dispatch => {
       password:userData.password,
       // number:userData.number,
       isDoctor:userData.isDoctor,
+      isMedical:userData.isMedical,
       id: res.user.uid,
       isApproved: false
      })
@@ -51,7 +52,7 @@ export const registerUser = (userData, history) => dispatch => {
         payload: userData
       })
 
-      if(userData.isDoctor===true){
+      if(userData.isDoctor===true || userData.isMedical === true){
         history.push('/dashboard')
       }else{
       history.push('/')
@@ -97,7 +98,7 @@ export const loginUser = (userData,history) => dispatch => {
       // snapshot.forEach(function(childSnapshot) {
         var childData = snapshot.val();
         log(childData)
-          if(childData?.isDoctor === true || childData?.email === 'admin@gmail.com'){
+          if(childData?.isDoctor === true || childData.isMedical === true || childData?.email === 'admin@gmail.com'){
             // alert('hello')
               history.push('/dashboard/')
           }  

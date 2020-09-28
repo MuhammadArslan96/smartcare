@@ -59,15 +59,17 @@ export const approveDoctor = (user) => dispatch => {
       email:user.email,
       password:user.password,
       isDoctor:user.isDoctor,
+      isMedical:user.isMedical,
       isApproved:true,
       id:user.id
     })
-
-    ToastsStore.success(`${user.name} approved as a doctor`)
+    user.isMedical===false?
+    ToastsStore.success(`${user.name} approved as a doctor`):
+    ToastsStore.success(`${user.name} approved as a Medical Store`)
     log(user)
     dispatch({
       type:'APPROVED',
-      payload:true
+      payload:user.id
     })
     // userRef.on('value', snapshot => {
     //   log(snapshot.val())

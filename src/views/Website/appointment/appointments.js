@@ -56,7 +56,7 @@ handleView=(item,index)=>{
                   <tbody>
                 {/* {data&& data.map(item => {
                     return ( */}
-                {this.props.doctorInfo&&this.props.doctorInfo.map((item,index) => {
+                {this.props.doctorInfo.length&&this.props.doctorInfo.map((item,index) => {
                     console.log(item)
                     return (                    
                         <tr key={item.Specialization}>

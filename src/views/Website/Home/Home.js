@@ -69,6 +69,17 @@ class Home extends Component {
     }, 100);
     
   }
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition(success, error);
+    function success(position) {
+        console.log(position.coords.latitude)
+        console.log(position.coords.longitude)
+    }
+    function error(err) {
+      console.log(err)
+  }
+
+  }
   render() {
     const  {name,email,user_number,selected_service,message}= this.state;
 

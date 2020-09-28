@@ -80,7 +80,8 @@ class DefaultLayout extends Component {
             <AppSidebarForm />
             <Suspense >
               {this.props.currentUser?.isApproved === true  || this.props.is_admin === true ?
-            <AppSidebarNav navConfig={this.props.is_admin !== true ? doctor_navigation :navigation} {...this.props} router={router}/>
+            <AppSidebarNav navConfig={this.props.is_admin !== true ? doctor_navigation :navigation}
+             {...this.props} router={router}/>
             :void 0
               }
             </Suspense>

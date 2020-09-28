@@ -79,7 +79,7 @@ class Users extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    {this.props.users?.user.length!==0 && this.props.users?.user.map((item,index) => {
+                    {this.props.users?.user.length===0 ? "Loading...": this.props.users?.user.map((item,index) => {
                       return (
                         item.isDoctor===false ?
                         <tr key={index} >
@@ -120,7 +120,8 @@ class Users extends Component {
                     </tr>
                   </thead>
                   <tbody>
-                    {this.props.users?.user.length!==0 && this.props.users?.user.map((item,index) => {
+                    {this.props.users?.user.length ===0 ? "Loading..." : this.props.users?.user.map((item,index) => {
+                      console.log(item.isApproved,this.props.is_approved,item.id)
                       return (
                         item.isDoctor===true ?
                         <tr key={index} >
@@ -128,8 +129,8 @@ class Users extends Component {
                         <td>  {item.name} </td>
                         <td>  {item.email} </td>
                         <td>  {item.isDoctor===true ? 'Doctor' : 'End-user'} </td>
-                        <td  > <Badge color={item.isApproved === true || this.props.is_approved === true?'success':'warning'}> 
-                        {item.isApproved || this.props.is_approved === true ?'Approved' : 'Pending'} </Badge></td>
+                        <td  > <Badge color={item.isApproved === true || this.props.is_approved === item.id?'success':'warning'}> 
+                        {item.isApproved || this.props.is_approved === item.id ?'Approved' : 'Pending'} </Badge></td>
                         <td style={item.isApproved ===false && this.props.is_approved !== true ?{cursor:'pointer'}: void 0}
                          onClick={() => item.isApproved ===false && this.props.is_approved !== true  ?
                            this.props.approveDoctor(item) : void 0 } > <Badge color='danger'> Approve </Badge></td>
@@ -152,9 +153,41 @@ class Users extends Component {
               {/* <CardHeader>
                 <i className="fa fa-align-justify"></i> Users <small className="text-muted">example</small>
               </CardHeader> */}
-              <CardBody>
-                <p>No data Found</p>
+               <CardBody>
+                <Table responsive hover>
+                  <thead>
+                    <tr>
+                      <th scope="col">id</th>
+                      <th scope="col">name</th>
+                      <th scope="col">registered</th>
+                      <th scope="col">role</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.props.users?.user.length===0 ? "Loading...":this.props.users?.user.map((item,index) => {
+                      return (
+                        item.isMedical===true ?
+                        <tr key={index} >
+                        <td> <Link to={`/users/${item.email}`} > {index} </Link>  </td>
+                        <td>  {item.name} </td>
+                        <td>  {item.email} </td>
+                        <td>  {item.isDoctor===true ? 'Doctor' : 'End-user'} </td>
+                        <td  > <Badge color={item.isApproved === true || this.props.is_approved === item.id?'success':'warning'}> 
+                        {item.isApproved || this.props.is_approved === item.id ?'Approved' : 'Pending'} </Badge></td>
+                        <td style={item.isApproved ===false && this.props.is_approved !== true ?{cursor:'pointer'}: void 0}
+                         onClick={() => item.isApproved ===false && this.props.is_approved !== true  ?
+                           this.props.approveDoctor(item) : void 0 } > <Badge color='danger'> Approve </Badge></td>
+                      </tr>
+                      : void 0
+                      )
+                    })}
+                  
+                  </tbody>
+                </Table>
               </CardBody>
+            
            
             </Card>
           </Col>

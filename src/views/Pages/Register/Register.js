@@ -19,6 +19,7 @@ class Register extends Component {
     }
   }
   onChange= e => this.setState({[e.target.name] : e.target.value})
+  
   onSubmit=e=> {
     e.preventDefault();
     const {name,password,email,repeat_password,isDoctor,isMedical} = this.state
@@ -28,8 +29,9 @@ class Register extends Component {
     }else{
       try{
     let newUser = {
-      name,password,email,repeat_password,isDoctor,
+      name,password,email,repeat_password,isDoctor,isMedical
     }
+    log(newUser)
     this.props.registerUser(newUser,this.props.history)
   }
     catch(e){
