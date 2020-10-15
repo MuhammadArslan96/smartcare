@@ -32,11 +32,13 @@ class MedicalStore extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
+    console.log(this.props.store_info!==prevProps.store_info,'medicol')
         if(prevProps.store_info !== this.props.store_info){
-            if(this.props.medicineList && this.props.address && this.props.storeName){
+            // if(this.props.medicineList && this.props.address && this.props.storeName){
                 const {medicineList,storeName,address} = this.props.store_info;
+                console.log(storeName)
                 this.setState({medicineList,storeName,address})
-            }
+            // }
         }
     }
     onChange=e=>this.setState({[e.target.name]:e.target.value})

@@ -9,7 +9,8 @@
 
 const initialState = {
     store_info:undefined,
-    quotations:undefined
+    quotations:undefined,
+    store_list:undefined
   };
   export default function(state = initialState, action) {
     switch (action.type) {
@@ -21,7 +22,13 @@ const initialState = {
           isAuthenticated: true,
           store_info: action.payload
         };
-
+        
+        case 'STORE_LIST':
+          return {
+            ...state,
+            loading:false,
+            store_list:action.payload
+          }
     //   case "QUOTATIONS":
     //     return {
     //       ...state,

@@ -14,7 +14,6 @@ export const addStoreData = (store_info) => dispatch => {
     ToastsStore.success("Your data succesfully saved")
 }
 
-
 export const getStoredata = () => dispatch => {
     var user = firebase.auth().currentUser;
     var ref = firebase.database().ref('storeData/' + user?.uid);
@@ -26,5 +25,24 @@ export const getStoredata = () => dispatch => {
           payload: data
       })
    // console.log(data,user,ref)  
+})
+}
+
+export const getAllStores = () => dispatch => {
+    var ref = firebase.database().ref('storeData/');
+    ref.once('value' , function(snapshot){  
+        let arr = []
+        snapshot.forEach(values=>{
+          let data = snapshot.val() 
+          arr.push(values.val())
+
+          })
+             dispatch({
+                    type:"STORE_LIST",
+                    payload: arr
+                })
+       
+    
+    console.log(arr,'arroo')  
 })
 }

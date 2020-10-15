@@ -185,9 +185,9 @@ class Home extends Component {
         <Col md="6" xs="12">
         <div className="contactDetail">
               <h4>Contact Us</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat ex finibus urna tincidunt, auctor ullamcorper.</p>
+              <p>We provide the best solution for E-medical stores and E-appointment </p>
               <h5>Call Us</h5>
-              <NavLink to="tel:123-456-7890">0307-0084689</NavLink>
+              <NavLink to="tel:123-456-7890">+92 304 2394276</NavLink>
               <h6>Mail Us Email</h6>
               <NavLink to="mailto:mail@example.com">appscorrer@gmail.com</NavLink>
             </div>

@@ -57,6 +57,7 @@ class Header extends Component { // eslint-disable-line react/prefer-stateless-f
     <ul>
                     <li><NavLink to="/">Home</NavLink></li>
                     <li><NavLink to="/appointments">Appointment</NavLink></li>
+                    <li><NavLink to="/storelist">Store</NavLink></li>
                     <li><Link to="/about">About Us</Link></li>
                     {/* <li><NavLink to="/services">Services</NavLink></li> */}
                     <li><NavLink to="/contact">Contact Us</NavLink></li>

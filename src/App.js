@@ -7,6 +7,8 @@ import {
   ToastsStore,
   ToastsContainerPosition
 } from "react-toasts";
+import StoreList from './views/Website/store/storeList';
+import Store from './views/Website/store/store';
 const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
 
 // Containers
@@ -37,6 +39,8 @@ class App extends Component {
             <Switch>
               <Route exact path="/" name="Home Page" render={props => <Home {...props}/>} /> 
               <Route exact path="/about" name="About Page" render={props => <About {...props}/>} /> 
+              <Route exact path="/storelist" name="About Page" render={props => <StoreList {...props}/>} /> 
+              <Route exact path="/store" name="About Page" render={props => <Store {...props}/>} /> 
               <Route exact path="/services" name="Services Page" render={props => <Services {...props}/>} /> 
               <Route exact path="/blog" name="Blog Page" render={props => <Blog {...props}/>} /> 
               <Route exact path="/contact" name="Contact Page" render={props => <Contact {...props}/>} /> 

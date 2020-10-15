@@ -1,0 +1,26 @@
+.items_parent_ul{
+    background-color: #FAFAFA;
+    box-shadow: 3px 1px 5px 2px rgb(182, 182, 182);
+    border-radius: 2%;
+    margin: 40px ;
+    padding: 10px;
+    cursor: pointer;
+}
+.items_parent_ul li {
+    list-style-type: none;
+}
+.items_ul{
+    padding: 0px;
+    cursor: pointer;
+}
+
+.items_ul li{
+    display: inline-block;
+}
+.inner_ul{
+    
+}
+.inner_ul li {
+    /* margin-top: 10px; */
+    display: block;
+}

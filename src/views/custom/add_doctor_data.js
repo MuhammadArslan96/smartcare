@@ -39,7 +39,8 @@ class AddDoctorData extends Component {
             description:undefined,
             gender:undefined,
             isEdit:false,
-            editRow:undefined
+            editRow:undefined,
+            hospital:undefined,
          }
     }
 
@@ -74,15 +75,15 @@ log(savedSchedule)
 
 onSubmitForm=()=>{
     // alert('hello')
-const {Specialization,address, experience, description,gender,savedSchedule} = this.state
+const {Specialization,address, experience, description,gender,savedSchedule,hospital} = this.state
     if(Specialization==undefined || Specialization=='' ||address==''||address==undefined||
-     address==''|| address==undefined|| description==''||description==undefined||
+     address==''|| address==undefined|| description==''||description==undefined||hospital==undefined||
      gender==''||gender==undefined||savedSchedule.length===0){
         ToastsStore.error("Fill all the fields ")
         return false
     }
     let data = {
-        Specialization,address, experience, description,gender,schedule:savedSchedule
+        Specialization,address, experience, description,gender,schedule:savedSchedule,hospital
     }
     this.props.addDoctorInfo(data)
     log(data)
@@ -104,6 +105,7 @@ componentDidMount() {
                 experience:propsie.experience,
                 gender:propsie.gender,
                 savedSchedule:propsie.schedule,
+                hospital:propsie.hospital,
             })
         }
     }, 1000);
@@ -128,7 +130,8 @@ deleteSchedule=()=>{
 }
     render() { 
         log(this.props)
-        const {timeFrom, timeTo, apmFrom, apmTo,selectDay,savedSchedule,Specialization,address, experience, description,gender,} = this.state
+        const {timeFrom, timeTo, apmFrom,hospital,
+             apmTo,selectDay,savedSchedule,Specialization,address, experience, description,gender,} = this.state
         let propsie = this.props.doctor_info
         return ( 
             <div className="animated fadeIn">
@@ -148,6 +151,16 @@ deleteSchedule=()=>{
                         <Col xs="12" md="9">
                         <p className="form-control-static">{this.props.currentUser?.name}</p>
                         </Col>
+                    </FormGroup>
+                    <FormGroup row>
+                        <Col md="3">
+                        <Label>Hospital Name</Label>
+                        </Col>
+                        <Col xs="12" md="9">
+                            <Input type="text" id="text-input" name='hospital' onChange={this.onChange} 
+                            value={hospital}
+                            placeholder="Hospital name" required />
+                         </Col>
                     </FormGroup>
                     <FormGroup row>
                         <Col md="3">
