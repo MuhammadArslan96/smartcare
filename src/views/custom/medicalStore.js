@@ -24,7 +24,8 @@ class MedicalStore extends Component {
             address:'',
             medicine:'',
             medicineList:[],
-
+            formula:'',
+            expiry:'',
          }
     }
     componentDidMount() {
@@ -32,21 +33,22 @@ class MedicalStore extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-    console.log(this.props.store_info!==prevProps.store_info,'medicol')
-        if(prevProps.store_info !== this.props.store_info){
+    console.log(this.props.store_info,prevProps.store_info,'medicol')
+        if(prevProps.store_info !== this.props.store_info && this.props.store_info){
             // if(this.props.medicineList && this.props.address && this.props.storeName){
                 const {medicineList,storeName,address} = this.props.store_info;
                 console.log(storeName)
-                this.setState({medicineList,storeName,address})
+                this.setState({medicineList:!medicineList?[]:medicineList,storeName,address})
             // }
         }
     }
     onChange=e=>this.setState({[e.target.name]:e.target.value})
 
     keyDown=e=>{
+        const {medicineList,formula,expiry,medicine} = this.state
         if(e.key == 'Enter'){
             let arr = this.state.medicineList;
-            arr.push(this.state.medicine);
+            arr.push({name:this.state.medicine,expiry,formula});
             console.log(arr)
             this.setState({medicine:'',medicineList:arr})
         }
@@ -59,15 +61,24 @@ delItem=index=>{
 }
 
 onSubmitForm=e=>{
-    const {storeName,address,medicineList} = this.state
-    let newObject={
-        storeName,address,medicineList
-    }
-    this.props.addStoreData(newObject)
-    console.log(newObject)
+    const {storeName,address,medicineList,formula,expiry,medicine} = this.state
+    // if(e.key == 'Enter'){
+        let arr = this.state.medicineList;
+        console.log(arr)
+        arr.push({name:medicine,expiry,formula});
+        console.log(arr)
+        this.setState({medicine:'',medicineList:arr},()=>{
+
+            let newObject={
+                storeName,address,medicineList
+            }
+            this.props.addStoreData(newObject)
+            console.log(newObject)
+        })
+    // }
 }
     render() { 
-        const {storeName,medicine,address,medicineList} = this.state
+        const {storeName,medicine,address,medicineList,formula,expiry} = this.state
         console.log(this.props.store_info,this.state)
         return ( 
             <div>
@@ -100,11 +111,33 @@ onSubmitForm=e=>{
                                       
                     <FormGroup row>
                         <Col md="3">
-                        <Label htmlFor="text-input">Add Your Medicine</Label>
+                        <Label htmlFor="text-input">Add Your Medicine Name</Label>
                         </Col>
                         <Col xs="12" md="9">
                         <Input type="text" id="text-input" name='medicine' value={medicine}
                          onChange={this.onChange} placeholder='Add your medicine' onKeyDown={this.keyDown}  >
+                        </Input>
+                        {/* <FormText color="muted">This is a help text</FormText> */}
+                        </Col>
+                    </FormGroup> 
+                    <FormGroup row>
+                        <Col md="3">
+                        <Label htmlFor="text-input">Bio Formula</Label>
+                        </Col>
+                        <Col xs="12" md="9">
+                        <Input type="text" id="text-input" name='formula' value={formula}
+                         onChange={this.onChange} placeholder='Medicine Bio formula' onKeyDown={this.keyDown}  >
+                        </Input>
+                        {/* <FormText color="muted">This is a help text</FormText> */}
+                        </Col>
+                    </FormGroup> 
+                    <FormGroup row>
+                        <Col md="3">
+                        <Label htmlFor="text-input">Expiry Date</Label>
+                        </Col>
+                        <Col xs="12" md="9">
+                        <Input type="number" id="text-input" name='expiry' value={expiry}
+                         onChange={this.onChange} placeholder='Medicine Expiry Date' onKeyDown={this.keyDown}  >
                         </Input>
                         {/* <FormText color="muted">This is a help text</FormText> */}
                         </Col>
@@ -118,15 +151,25 @@ onSubmitForm=e=>{
                                 </CardHeader>
                                 <CardBody>
                                     <ListGroup>
+                                        <ListGroupItem>
+                                            Sr <strong style={{marginLeft:'50px',cursor:'pointer',color:'red'}} ></strong>Name<strong style={{marginLeft:'50px',cursor:'pointer',color:'red'}} ></strong>
+                                            Formula<strong style={{marginLeft:'50px',cursor:'pointer',color:'red'}} ></strong>
+                                             Expiry
+                                        </ListGroupItem>
+                                    </ListGroup>
                                         {medicineList.length>0 && medicineList.map((item,index)=> {
                                             return (
+                                        <ListGroup>
                                                 <ListGroupItem key={index} onClick={this.delItem.bind(this,index)} > 
-                                                    {index+1} {item} <strong style={{marginLeft:'50px',cursor:'pointer',color:'red'}} >X</strong>
+                                                    {index+1} <strong style={{marginLeft:'50px',cursor:'pointer',color:'red'}} ></strong> {item.name} <strong style={{marginLeft:'50px',cursor:'pointer',color:'red'}} ></strong>
+                                                    {item.formula} <strong style={{marginLeft:'50px',cursor:'pointer',color:'red'}} ></strong>
+                                                    {item.expiry} <strong style={{marginLeft:'50px',cursor:'pointer',color:'red'}} >X</strong>
                                                 </ListGroupItem>
+                                             
+                                    </ListGroup>
 
                                             )
                                         })}
-                                    </ListGroup>
                                 </CardBody>
                             </Card>
     }
