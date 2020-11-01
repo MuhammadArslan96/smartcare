@@ -110,8 +110,9 @@ class Home extends Component {
           <Row className="justify-content-center">
             <Col md="6">
             <div className="aboutpara ">
-                    <p>Duis luctus ipsum velit, vitae malesuada arcu hendrerit ac. Sed finibus finibus efficitur. Morbi odio nibh, viverra non lacus non, luctus sodales justo. Donec erat libero, pulvinar venenatis dictum sed, commodo at lacus. Duis mollis gravida lacus, vitae eleifend magna pretium eget. Fusce tristique sem pretium libero bibendum porttitor. </p>
-                    <p>Proin a interdum massa. Duis euismod, leo eget porttitor sodales, arcu lectus ullamcorper magna, at interdum orci leo eu dolor. Pellentesque et orci sed erat convallis blandit ut vitae diam. Morbi eget libero et leo euismod imperdiet. Proin in pellentesque tortor, accumsan volutpat purus.</p>
+                    <p>It was never so easy to buy online medicines in Pakistan. SmartCare didn’t just provide this service for your ease but is also making sure that authentic and reliable medicines reach at your doorstep with complete safety. With this amazing service there is no need to visit any pharmacy physically because you can explore our digital online pharmacy with medicine pricing and details to save your time and hassle. SmartCare provides the Best online medicines delivery service in Pakistan and is considered the best online medical store.</p>
+                    <p>Smart Care cloud based online appointment, booking and scheduling solution that is simple, easy and convenient for you and your customers.
+Ensure you are connected with your customers even before they arrive. With Smart Care appointment solution, your customers can connect from anywhere, from booking to check-in to rescheduling and canceling an appointment. This helps you to minimize customer wait times and giving top quality service to your customers</p>
                     <div className="aboutbtn">
                       <NavLink to="/about">Learn More</NavLink>
                     </div>
@@ -131,8 +132,7 @@ class Home extends Component {
           <Col md="12">
           <div className="portfolioHeading">
               <h4>Our Services</h4>
-              <p>Proin nec sem eros. Sed a elit sapien. Morbi hendrerit, turpis id mollis varius,
-                mauris enim tempor elit, et mollis purus elit nec velit.
+              <p>There are several features of buying medicines online and taking online appointment that will help buyer and seller both. These are listed below:
               </p>
             </div>
           </Col>
@@ -142,21 +142,24 @@ class Home extends Component {
         <div className="portfolioBox">
               <img src="../../assets/img/high-customizable.png" className="img-responsive" alt="Portfolio Brand" />
               <h4>Find Nearest Doctor</h4>
-              <p>Nulla varius consequat magna, id molestie ipsum volutpat quis. A true story, that never been told!.</p>
+              <p>Choose the speciality you want to book your online doctor appointment with SmartCare will give you the easiest experience of appointment booking. While booking appointment you can read reviews of doctors in Karachi. All the reviews displayed on the doctors profiles are based on real experiences of patients.
+.</p>
             </div>
           </Col>
           <Col md="4">
           <div className="portfolioBox">
               <img src="../../assets/img/clean-code.png" className="img-responsive wow fadeInDown" data-wow-delay="0.2s" alt="Portfolio Brand" />
               <h4>Find Nearest Medical Store</h4>
-              <p>Nulla varius consequat magna, id molestie ipsum volutpat quis. A true story, that never been told!.</p>
+              <p>Find medicine store in karachi, Local List. Providing useful information, the address, phone numbers, web addresses and email addresses of user.
+</p>
             </div>
           </Col>
           <Col md="4">
           <div className="portfolioBox">
               <img src="../../assets/img/fast-performance.png" className="img-responsive wow fadeInDown" data-wow-delay="0.2s" alt="Portfolio Brand" />
               <h4>E-Appointment</h4>
-              <p>Nulla varius consequat magna, id molestie ipsum volutpat quis. A true story, that never been told!.</p>
+              <p>E-Appointment services could be considered as simple solutions providing significant benefits for improving the accessibility and efficiency for delivering public.
+.</p>
             </div>
           </Col>
         </Row>
@@ -172,8 +175,10 @@ class Home extends Component {
             </Col>
             <Col md="6">
             <div className="aboutpara ">
-                    <p>Duis luctus ipsum velit, vitae malesuada arcu hendrerit ac. Sed finibus finibus efficitur. Morbi odio nibh, viverra non lacus non, luctus sodales justo. Donec erat libero, pulvinar venenatis dictum sed, commodo at lacus.</p>
-                    <p>Proin a interdum massa. Duis euismod, leo eget porttitor sodales, arcu lectus ullamcorper magna, at interdum orci leo eu dolor. Pellentesque et orci sed erat convallis blandit ut vitae diam. Morbi eget libero et leo euismod imperdiet.</p>
+                    <p>Patients for various medical treatments. Simply view various daily, weekly and monthly patient schedules. Through Email appointment schedule reminders. Medical practices can make appointment scheduling easier with online scheduling services. Online scheduling helps to manage doctor’s appointment schedules, patient, records and more..</p>
+                    <p>
+ By using SmartCare as your appointment manager you automatically keep track of your  patients in your database. You can add their medical record, personal details, contact  information and send notifications. When patients make their first appointment with you, online or manually, their data is automatically saved into your database. Import you existing database into SmartCare and you will have all information in one management tool.
+.</p>
                   </div>
             </Col>
           </Row>
@@ -185,11 +190,13 @@ class Home extends Component {
         <Col md="6" xs="12">
         <div className="contactDetail">
               <h4>Contact Us</h4>
-              <p>We provide the best solution for E-medical stores and E-appointment </p>
+              <p>The easiest and fastest way to get in touch with SmartCare. Do not hesitate to send a message with your queries.
+</p>
               <h5>Call Us</h5>
-              <NavLink to="tel:123-456-7890">+92 304 2394276</NavLink>
+              <NavLink to="tel:123-456-7890">+92 3327375456</NavLink><br/>
+              <NavLink to="tel:123-456-7890">+92 3042394276</NavLink>
               <h6>Mail Us Email</h6>
-              <NavLink to="mailto:mail@example.com">appscorrer@gmail.com</NavLink>
+              <NavLink to="mailto:smartcare2k17@gmail.com"> smartcare2k17@gmail.com</NavLink>
             </div>
       </Col>
           <Col md="6" xs="12">

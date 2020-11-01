@@ -9,7 +9,8 @@
 
   const initialState = {
     doctor_info:undefined,
-    quotations:undefined
+    quotations:undefined,
+    doctorOrders:undefined
   };
   export default function(state = initialState, action) {
     switch (action.type) {
@@ -29,7 +30,15 @@
           isAuthenticated: true,
           quotations: action.payload
         };
-    
+
+        case "DOCTOR_ORDERS":
+          return {
+            ...state,
+            loading: false,
+            isAuthenticated: true,
+            doctorOrders: action.payload
+          };
+        
       default:
         return state;
     }

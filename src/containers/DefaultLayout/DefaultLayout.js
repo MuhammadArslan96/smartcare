@@ -21,6 +21,7 @@ import {
 // sidebar nav config
 import navigation from '../../_nav';
 import doctor_navigation from '../../doctor_nav';
+import medical_navigation from '../../medical_nav';
 // routes config
 import routes from '../../routes';
 import { ToastsStore } from 'react-toasts';
@@ -80,7 +81,8 @@ class DefaultLayout extends Component {
             <AppSidebarForm />
             <Suspense >
               {this.props.currentUser?.isApproved === true  || this.props.is_admin === true ?
-            <AppSidebarNav navConfig={this.props.is_admin !== true ? doctor_navigation :navigation}
+            <AppSidebarNav navConfig={this.props.currentUser?.isMedical == true? 
+              medical_navigation: this.props.is_admin !== true ? doctor_navigation :navigation}
              {...this.props} router={router}/>
             :void 0
               }

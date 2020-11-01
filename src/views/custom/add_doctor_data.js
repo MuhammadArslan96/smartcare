@@ -83,7 +83,7 @@ const {Specialization,address, experience, description,gender,savedSchedule,hosp
         return false
     }
     let data = {
-        Specialization,address, experience, description,gender,schedule:savedSchedule,hospital
+        Specialization,address, experience, description,gender,schedule:savedSchedule,hospital,name:this.props.currentUser?.name
     }
     this.props.addDoctorInfo(data)
     log(data)
@@ -129,7 +129,7 @@ deleteSchedule=()=>{
                 timeFrom:'', timeTo:'', apmFrom:'', apmTo:'',selectDay:''})
 }
     render() { 
-        log(this.props)
+        log(this.props.currentUser)
         const {timeFrom, timeTo, apmFrom,hospital,
              apmTo,selectDay,savedSchedule,Specialization,address, experience, description,gender,} = this.state
         let propsie = this.props.doctor_info

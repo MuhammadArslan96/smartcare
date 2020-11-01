@@ -5,6 +5,7 @@ import {Row,Badge} from 'reactstrap'
 import Header from '../Header/Header'
 import './style.css'
 import Store from './store';
+import { ToastsStore } from 'react-toasts';
 class StoreList extends Component {
     constructor(props) {
         super(props);
@@ -25,7 +26,11 @@ class StoreList extends Component {
         }
     }
     openStore=(item,index)=>{
-        console.log(this.props.history)
+        console.log(item)
+        if(!item?.medicineList) {
+            ToastsStore.error("there is no medicine for this store")
+            return
+        }
         this.setState({selectedStore:item})
         localStorage.setItem('current_item', JSON.stringify(item))
         this.props.history.push('/store')

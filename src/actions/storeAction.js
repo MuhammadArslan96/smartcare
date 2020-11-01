@@ -46,3 +46,28 @@ export const getAllStores = () => dispatch => {
     console.log(arr,'arroo')  
 })
 }
+
+export const storeOrder = (item) => (dispatch) => {
+    var ref = firebase.database().ref('orders/' );
+    ref.push(item)
+
+}
+
+export const getAllOrders = () => dispatch => {
+    var ref = firebase.database().ref('orders/');
+    ref.once('value' , function(snapshot){  
+        let arr = []
+        snapshot.forEach(values=>{
+          let data = snapshot.val() 
+          arr.push(values.val())
+
+          })
+             dispatch({
+                    type:"ORDERS",
+                    payload: arr
+                })
+       
+    // ToastsStore.success('Succesfully order placed')
+    console.log(arr,'arroo')  
+})
+}

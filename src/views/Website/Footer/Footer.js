@@ -19,11 +19,14 @@ class Footer extends Component { // eslint-disable-line react/prefer-stateless-f
             <AppNavbarBrand
            full={{ src: logo, alt: ' Logo' }}
             />
-              <p>Lorem ipsum dolor sit amet, consecte adipiscing elit. Suspendisse condimentum porttitor cursumus.</p>
+              <p>SmartCare is the leading online management software that helps you set up your business on the cloud. Build a professional website with our easy website builder, promote your services, and offer online bookings..</p>
               <ul>
-                <li><NavLink to="#"><i className="fa fa-linkedin" aria-hidden="true"></i></NavLink></li>
-                <li><NavLink to="#"><i className="fa fa-twitter" aria-hidden="true"></i></NavLink></li>
-                <li><NavLink to="#"><i className="fa fa-facebook" aria-hidden="true"></i></NavLink></li>
+                <li style={{cursor:'pointer'}}  onClick={()=>{
+                  window.open("https://www.instagram.com/smartcare2k17/")
+                }} ><i className="fa fa-instagram" aria-hidden="true"></i>  </li>
+                <li style={{cursor:'pointer'}}  onClick={()=>{
+                  window.open("https://www.facebook.com/Smart-Care-100260351887491")
+                }} ><i className="fa fa-facebook" aria-hidden="true"></i></li>
               </ul>
             </div>
           </Col>

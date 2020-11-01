@@ -2,6 +2,8 @@ import React from 'react';
 
 const AddDoctorData = React.lazy(() => import('./views/custom/add_doctor_data'));
 const Quotations = React.lazy(() => import('./views/custom/quotations'));
+const Orders = React.lazy(() => import('./views/custom/orders'));
+const DoctorOrders = React.lazy(() => import('./views/custom/doctorOrders'));
 const Breadcrumbs = React.lazy(() => import('./views/Base/Breadcrumbs'));
 const Cards = React.lazy(() => import('./views/Base/Cards'));
 const Carousels = React.lazy(() => import('./views/Base/Carousels'));
@@ -83,6 +85,8 @@ const routes = [
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
   { path: '/adddoctordata', exact: true, name: 'Doctor Details', component: AddDoctorData },
   { path: '/quotations', exact: true, name: 'Quotations', component: Quotations },
+  { path: '/orders', exact: true, name: 'Orders', component: Orders },
+  { path: '/doctorOrders', exact: true, name: 'Orders', component: DoctorOrders },
   // { path: '/appointments', exact: true, name: 'Appointments', component: Appointments },
 ];
 

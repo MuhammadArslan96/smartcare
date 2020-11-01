@@ -20,15 +20,15 @@ export default {
         icon: 'icon-bell',
       },
       {
-        name: 'Quotation Requests',
-        url: '/quotations',
-        icon: 'icon-bell',
-      },
-      {
         name: 'Orders',
-        url: '/doctorOrders',
+        url: '/orders',
         icon: 'icon-bell',
       },
+    //   {
+    //     name: 'Notifications',
+    //     url: '/notifications/alerts',
+    //     icon: 'icon-bell',
+    //   },
     //   {
     //     name: 'Widgets',
     //     url: '/widgets',

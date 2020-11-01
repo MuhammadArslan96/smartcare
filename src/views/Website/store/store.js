@@ -1,5 +1,9 @@
 import React,{Component} from 'react';
-import {CardBody,Table} from 'reactstrap'
+import {Button, CardBody,Table} from 'reactstrap'
+import firebase from '../../../config/index'
+import Header from '../Header/Header';
+import {storeOrder} from '../../../actions/storeAction'
+import { connect } from 'react-redux';
 class Store extends Component {
     constructor(props) {
         super(props);
@@ -15,6 +19,22 @@ class Store extends Component {
 
     search_filter=e=>{
         this.setState({search:e.target.value.substr(0,20)})
+    }
+    handleBuy=item=>{
+        var user = firebase.auth().currentUser;
+        if(!user){
+            alert('Please Login First to view Store data')
+        } else{
+            // alert('user  hy')
+            console.log(user)
+            const {data} = this.state;
+            let newdata = {
+                order:item,
+                storeName:data?.storeName,
+                email:user?.email
+            }
+            this.props.storeOrder(newdata)
+        }
     }
     render() { 
           const {data,search} = this.state
@@ -32,6 +52,7 @@ class Store extends Component {
           })
         return ( 
             <div style={{backgroundColor:'white'}} >
+                 <Header />
                 <div className='store_banner' >
                     <h2 style={{color:'#31325D',padding:'10px'}} >
                        <img src={require('./images/store1.svg')} width='50px' />{data?.storeName} </h2>
@@ -46,6 +67,7 @@ class Store extends Component {
                             <th>Medicine Name</th>
                             <th>Formula</th>
                             <th>Expiry date</th>
+                            <th>Action</th>
 
                             {/* <th>Action</th> */}
                         </tr>
@@ -56,7 +78,10 @@ class Store extends Component {
                                     <tr> 
                                         <td>{item.name} </td>                                       
                                         <td>{item.formula} </td>                                       
-                                        <td>{item.expiry} </td>                                       
+                                        <td>{item.expiry} </td>        
+                                        <td> 
+                                            <Button onClick={this.handleBuy.bind(this,item)} color="danger">Buy</Button>
+                                         </td>                               
                                     </tr> 
                                    
                                 )
@@ -73,4 +98,4 @@ class Store extends Component {
     }
 }
  
-export default Store;
+export default connect(null,{storeOrder})(Store);

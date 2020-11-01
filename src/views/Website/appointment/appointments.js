@@ -1,8 +1,9 @@
 import React,{Component} from 'react';
 import Header from '../Header/Header';
 import { Row, Col,CardBody,Table,Badge,Card,CardHeader, Button } from 'reactstrap';
-import {getAllDoctorInfo} from '../../../actions/doctorInfoAction'
+import {getAllDoctorInfo,doctorOrder} from '../../../actions/doctorInfoAction'
 import { connect } from 'react-redux';
+import { ToastsStore } from 'react-toasts';
 // import Header
 
 class Appointments extends Component {
@@ -11,6 +12,9 @@ class Appointments extends Component {
         this.state = { 
             data:[],
             currentDoctor:undefined,
+            name:'',
+            email:'',
+            description:''
          }
     }
 
@@ -28,9 +32,21 @@ handleView=(item,index)=>{
         currentDoctor:item
     })
 }
+submithandler=()=>{
+    const {name,email,description} = this.state;
+    if(!name || !email || !description ){
+        ToastsStore.error('please fill all fields')
+        return
+    }
+    let obj = {
+        name,email,description
+
+    }
+    this.props.doctorOrder(obj)
+}
     render() { 
-        const {data} = this.state;
-        console.log(this.props.doctorInfo,this.state)      
+        const {data,name,email,description} = this.state;
+        console.log(this.props.doctorInfo,this.state.data)      
 
         return !this.props.doctorInfo ? <p>loding</p> : ( 
             <div>
@@ -61,7 +77,7 @@ handleView=(item,index)=>{
                     return (                    
                         <tr key={item.Specialization}>
                             {console.log(item)}
-                        <td>Dr,Alvis Peter</td>
+                        <td> {item.name} </td>
                         <td>{item?.experience} </td>
                         <td>{item?.Specialization}</td>
 
@@ -106,19 +122,26 @@ handleView=(item,index)=>{
                             <Row>
                                 <Col >
                                   <img src={require("./images/doctor.png")} width='90' />
-                                   <h5>Dr.Alvis Peter</h5>
+                                   <h5>{this.state.currentDoctor?.name} </h5>
                                    
                                    <input placeholder='Name' 
                                    style={{width:'100%',marginTop:'2vw',border:'1px solid #d3d3d3', borderRadius:'5px',paddingLeft:'0.5vw',
-                                    maxHeight:'2vw'}}/>
+                                    maxHeight:'2vw'}}
+                                    value={name}
+                                    onChange={(e)=>this.setState({name:e.target.value})}
+                                    />
 
                                     <input placeholder='Email' type='email' 
                                    style={{width:'100%',marginTop:'2vw',border:'1px solid #d3d3d3', borderRadius:'5px',paddingLeft:'0.5vw',
-                                    maxHeight:'2vw'}}/>
+                                    maxHeight:'2vw'}}
+                                    value={email}
+                                    onChange={(e)=>this.setState({email:e.target.value})}/>
 
                                    <textarea placeholder='Write your messgae here' 
                                    style={{width:'100%',marginTop:'2vw',minHeight:'5vw',
-                                   border:'1px solid #d3d3d3', borderRadius:'10px',paddingLeft:'0.5vw'}} >
+                                   border:'1px solid #d3d3d3', borderRadius:'10px',paddingLeft:'0.5vw'}}
+                                   value={description}
+                                    onChange={(e)=>this.setState({description:e.target.value})} >
                                    </textarea>
 
                                    <div style={{marginTop:'3vw'}} >
@@ -147,7 +170,7 @@ handleView=(item,index)=>{
                                        <button style={{
                                            backgroundColor:'#C48DC2', border:'1px solid #C48DC2',borderRadius:'10px',
                                            color:'white',width:'90%',padding:'0.5vw',textAlign:'center',marginLeft:'1vw'
-                                       }} >Submit</button>
+                                       }}  onClick={this.submithandler} >Submit</button>
                                    </div>
                                 </Col>
                                
@@ -167,4 +190,4 @@ const mapStateToProps = state => {
         doctorInfo : state.doctorReducer.doctor_info,
     }
 }
-export default connect(mapStateToProps,{getAllDoctorInfo})(Appointments);
+export default connect(mapStateToProps,{getAllDoctorInfo,doctorOrder})(Appointments);

@@ -3,6 +3,11 @@ import { ToastsStore } from 'react-toasts';
 const log = console.log
 export const addDoctorInfo = (doc_info) => dispatch => {
     var user = firebase.auth().currentUser;
+    // let doc_info = {
+    //   data:info,
+    //   id:user?.uid
+    // }
+    console.log(doc_info)
     var ref = firebase.database().ref('users/' + user?.uid);
     ref.child('doctorInfo').set({...doc_info})
 
@@ -30,40 +35,54 @@ export const getDoctorInfo = (doc_info) => dispatch => {
 }
 export const getAllDoctorInfo = (doc_info) => dispatch => {
   let arr = []
+  let arrD = []
   let user = firebase.auth().currentUser;
   var ref = firebase.database().ref('users/')
   log(user)
+  
   ref.once('value' , function(snapshot){  
-    // snapshot.forEach(values=>{
+    snapshot.forEach(function(childsnap){
+
+      console.log(childsnap.val())
+      let key = childsnap.val().id
       let data = snapshot.val() 
-      for(let key in data){
-        let str = key.toString()
+      // for(let key in data){
+        // console.log(value)
         var child = firebase.database().ref('users/' + key ).child('doctorInfo');
-        log(child)
-      child.once('value' , function(snapshot){
-       let childdata = snapshot.val()
-        log(key,childdata,user,snapshot.val(),arr)
-        if(childdata?.Specialization){
-
-          arr.push(childdata)
-         setTimeout(() => {
-          dispatch({
-            type:"DOCTOR_INFO",
-            payload: arr
-        })
-         }, 1000);
+        console.log(child)
+        var userData = firebase.database().ref('users/' + key )
+      let isId = null
+        child.once('value' , function(snap){              
+          console.log(snap.val() !== null ? snap.val() : 'nh hy')
+            if(snap.val() !== null) {
+              let value = snap.val()
+              console.log(snap.val());
+              isId = snap.val().id
+              arrD.push(value)
+              setTimeout(() => {
+                
+                dispatch({
+                  type:"DOCTOR_INFO",
+                  payload: arrD
+              })
+              }, 500);
+            }
+           
+         
+          })   
+     
+      // }
+      if(arrD.length>0){
+        console.log(arrD)
+          
+ 
         }
-      })
-      }
-    //   arr.push(data)
-      log(data,arr)
-    
-    // })
-   
-  })
-
+      } 
+      )
+      
+    })
+ 
 }
-
 export const getQuotations = () => dispatch => {
   let arr = []
   const ref = firebase.database().ref("quotations/");  
@@ -86,6 +105,32 @@ export const getQuotations = () => dispatch => {
   });
 }
 
-export const sendQuotationToUser = (data) => dispatch => {
-  
+export const doctorOrder = (data) => dispatch => {
+  var ref = firebase.database().ref('doctorOrders/' );
+  ref.push(data)
+  ToastsStore.success('Succesfully order placed')
+
+}
+
+export const getAllDoctorOrders = () => dispatch => {
+  var ref = firebase.database().ref('doctorOrders/');
+  ref.once('value' , function(snapshot){  
+      let arr = []
+      snapshot.forEach(values=>{
+        let data = snapshot.val() 
+        arr.push(values.val())
+
+        })
+           dispatch({
+                  type:"DOCTOR_ORDERS",
+                  payload: arr
+              })
+     
+  // ToastsStore.success('Succesfully order placed')
+  // console.log(arr,'arroo')  
+})
+}
+
+export const sendQuotationToUser = () => dispatch => {
+
 }
